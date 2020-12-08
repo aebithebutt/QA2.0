@@ -1,0 +1,52 @@
+.pg1-text{
+    font-family: Montserrat;
+    font-style: normal;
+}
+
+.row_bodytext1{
+    margin-top: 130px;
+}
+
+.body-text1{
+font-size: 44px;
+line-height: 54px;
+margin-left: 109px;
+
+float: left;
+}
+
+.row_bodytext2{
+    margin-top: 20px;
+}
+
+
+
+.body-text2{
+    font-weight: 500;
+font-size: 25px;
+line-height: 30px;
+margin-left: 109px;
+float: left;
+color: #000000;
+}
+
+.body_input{
+    width: 325px;
+    height: 55px;    
+background: #FFFFFF;
+border: 1px solid #488BFF;
+box-sizing: border-box;
+border-radius: 3px;
+font-weight: normal;
+font-size: 20px;
+line-height: 38px;
+margin-left: 109px;
+margin-top: 50px;
+}
+
+.input_button{
+    height: 55px;  
+    margin-top: 50px;
+    width: 125px;
+    background: #488BFF;
+}

@@ -1,0 +1,85 @@
+.row-center-step5{
+    justify-content:center;
+display:flex;
+}
+.cardhandle-step5{
+height:500px;
+margin-top:35px;
+box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+border-radius:0.8rem;
+width:750px;
+border:0px;
+padding:15px;
+padding-left: 25px;
+padding-right: 25px;
+}
+
+.iconback-step5{
+        width: 32.5px;
+    height: 32.5px;
+    margin-left: 22px;
+  
+}
+
+.heading-one-step5{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 27px;
+    text-align: center;
+    justify-content:center;
+    display:flex;
+    margin-top:25px;
+    color: #000000;
+    margin-right: 455px;
+    margin-top: 44px;
+    }
+.mainHeading-step5{
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 35px;
+line-height: 27px;
+color: #000000;
+margin-bottom: 10px;
+}
+
+.car-model-btn{
+    margin-top: 10px;
+border-radius: .25rem;
+Width:45%;
+height:50px;
+background-color: #ffffff;
+border:1px solid #007bff;
+color: #007bff;
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 24px;
+}
+
+.car-model-btn:hover{
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+
+    .base-btn-step5{
+        background: #488BFF;
+        border-radius: 8px;
+        Width:161px;
+        Height:49px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        /* identical to box height, or 171% */
+        color: #FFFFFF;
+      
+        align-items: center;
+        text-align: center;
+        
+        }
