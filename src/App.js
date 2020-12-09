@@ -7,6 +7,7 @@ import LandingPage1 from './Components/LandingPage1';
 import LandingPage2 from './Components/LandingPage2';
 import LandingPage3 from './Components/LandingPage3';
 import NavBar from './Components/NavBar';
+
 import Step2 from './Components/Step2';
 import Step3 from './Components/Step3';
 import Step4 from './Components/Step4/Step4'
@@ -110,6 +111,8 @@ import React, { Component } from 'react';
      return (
         <ThemeProvider>
        <NavBar/>
+       <LandingPage3 /> 
+       <Step2 />
      
 <Step_three 
 yearForVehicleName={this.yearForVehicleName}
@@ -121,6 +124,7 @@ postData: { ...this.state.postData, Vehicle_1_Year: value },
 />
 
 
+
 {/**      <Step6/>    */}  
 
 {/*   <LandingPage1/> */}
@@ -129,7 +133,7 @@ postData: { ...this.state.postData, Vehicle_1_Year: value },
 
 
 {/**     <Step2/>     */}      
-{/**      <Step3/>    */}
+{/* *      <Step3/>    */}
 {/**     <Step4/>     */}   
 {/*      <Step5/>     */}
 
