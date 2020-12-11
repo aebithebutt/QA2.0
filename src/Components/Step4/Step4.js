@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import { Div,Text,Icon,Button} from "atomize";
 import {ProgressBar,Card} from 'react-bootstrap';
@@ -289,3 +290,4 @@ class Step4 extends Component {
 }
 
 export default Step4;
+*/

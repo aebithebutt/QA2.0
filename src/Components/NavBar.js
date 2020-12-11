@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { Div,Text,Image,Button } from "atomize";
+import { Div,Text,Image} from "atomize";
+import {Button} from 'antd';
 import {Navbar} from 'react-bootstrap';
 import './NavBar.css';
 class NavBar extends Component {

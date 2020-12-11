@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Div,Text,Icon,Button} from "atomize";
+import { Div,Text,Icon} from "atomize";
 import {ProgressBar,Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Step3.css';
+import './Step_three.css';
 import {Select} from 'antd';
+import { Button } from 'react-bootstrap';
 import ImagesLine from './ImagesLine'
 import carYears from './carYears'
 const { Option } = Select;
@@ -12,6 +13,8 @@ class Step_three extends Component {
     state = {
 		years: "",
 		stateName: "",
+	//	check:"",
+	//	check1:"",
 	};
 	UNSAFE_componentWillMount = () => {
 		/*		axios.get('/getyears')
@@ -41,16 +44,16 @@ class Step_three extends Component {
 
 		for (var i = this.state.years.maxYear; i > this.state.years.maxYear - 24; i--) {
 			arr.push(
-				<div className="col-3 p-2" key={i}>
+				<Div className="col-3 p-2" key={i}>
 					<Button
 						value={i}
 						className="year-btn"
+						onClick={(e) => {this.moveNext(e)}}
 					
-						onClick={(e) => this.moveNext(e)}
 					>
 						{i}
 					</Button>
-				</div>
+				</Div>
 			);
 		}
 		return arr;
@@ -65,7 +68,7 @@ class Step_three extends Component {
 					<input
 						type="button"
 						
-					
+					style={{ marginTop:"3px",backgroundColor:"transparent" }} 
 						value={i}
 						onClick={this.moveNext}
 					/>
@@ -76,10 +79,15 @@ class Step_three extends Component {
 	};
 
 	moveNext = (e) => {
-		this.props.nextStep();
+		//this.setState({check:'true'});
+		this.props.nextStep(); 
 		this.props.Vehicle_1_Year(Number(e.target.value));
 		this.props.yearForVehicleName(Number(e.target.value));
 	};
+		/**	move=()=>{
+		this.props.nextStep(); 
+	} 
+ */
 
     render() {
         
@@ -109,7 +117,7 @@ class Step_three extends Component {
                                                 <Icon name="LeftArrowSolid" color="#488BFF" className="iconback" />
                                         </Div>
 
-                                          <Div className="row row-center-step3" >
+                                          <Div className="row row-center-step3"style={{marginBottom:"20px"}} >
                                               <Text className="mainHeading-step3" tag="h1"> Vehicle Year</Text>
                                          </Div>
                                          
@@ -136,11 +144,25 @@ class Step_three extends Component {
 
                                 
                         </Div>
-                        <Div className="row row-center-step3" style={{marginTop:"10px"}}>
-                                    <Button className="base-btn-step3" >  Next </Button>
+			{/**	 {	this.state.check==='true' ||  this.state.check1==='true'	? 		
+			
+							
+
+							<Div className="row row-center-step3" style={{marginTop:"10px"}}>
+							<Button className="base-btn-step3"
+								 disabled={false} onClick={()=>{this.move()}} 
+							 >  Next </Button>
 
 
-                                      </Div>
+							  </Div> */}	
+				{/**	: 
+							<Div className="row row-center-step3" style={{marginTop:"10px"}}>
+							<Button className="base-btn-step3" style={{background:"#B0B7C3"}} disabled={true} onClick={()=>{this.move()}} >  Next </Button>
+
+
+							  </Div> }	 */}	
+					
+                      
 
                                     
                               

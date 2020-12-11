@@ -4,6 +4,9 @@ import './MainBody.css';
 import BottomTag from './BottomTag'
 import ImagesLine from './ImagesLine'
 class LandingPage3 extends Component {
+    move=()=>{
+        this.props.nextStep();
+  }
     render() {
         return (
             <>
@@ -39,7 +42,7 @@ class LandingPage3 extends Component {
        <Div className="row">
            
                   <Input className="body_input pg1-text" placeholder="Address" />
-                  <Button className="input_button"></Button>
+                  <Button className="input_button"  onClick={()=>this.move()}></Button>
 
        </Div>
                                 {/*-------------------- Separate Component for Bottom Tag----------------------- */} 

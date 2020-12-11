@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import 'antd/dist/antd.css';
 import { ThemeProvider,StyleReset} from 'atomize';
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route,BrowserRouter} from 'react-router-dom'
 import LandingPage1 from './Components/LandingPage1';
 import LandingPage2 from './Components/LandingPage2';
 import LandingPage3 from './Components/LandingPage3';
@@ -10,10 +10,12 @@ import NavBar from './Components/NavBar';
 import Step2 from './Components/Step2';
 import Step3 from './Components/Step3';
 import Step4 from './Components/Step4/Step4'
+import Step_4 from './Components/Step4/Step_4'
 import Step5 from './Components/Step5/Step5'
-import Step6 from './Components/Step6/Step6'
+import Step_5 from './Components/Step5/Step_5'
+import Step_6 from './Components/Step6/Step_6'
 import Step_three from './Components/Step_three'
-
+import StepWizard from "react-step-wizard";
 
  
 import React, { Component } from 'react';
@@ -98,19 +100,112 @@ import React, { Component } from 'react';
       Driver_1_Address: "",
       Driver_1_Email: "",
       Driver_1_Daytime_Phone: "",
-    }
+    },
+    postData2: {
+      email: "",
+      phone: "",
+      address: "",
+      zip: "",
+      home_ownership: 0,
+      vehicles: [
+        // {
+        // 	year: "",
+        // 	model: "",
+        // 	primary_purpose: "",
+        // 	annual_mileage: "",
+        // 	ownership: "",
+        // },
+      ],
+      drivers: [
+        {
+          driver: "",
+          gender: "",
+          marital_status: "",
+          birth_date: "",
+          education: "",
+          credit_rating: "",
+          sr_22: "No",
+        },
+      ],
+      current_company: "",
+      continuous_coverage: "",
+      //coverage_type: "",
+    },
+    year: 0,
+    name: "Ford",
+    zipCodeCity: "",
+    username: "",
+    table: [],
+    home_ownership: 0,
+    sr_22: "No",
+    current_company: "",
+    continuous_coverage: "",
+  };
+
+  maintainTable = () => {
+    this.setState({
+      table: [
+        ...this.state.table,
+        {
+          name: this.state.name,
+          model: this.state.postData.Vehicle_1_Model,
+          year: this.state.year,
+        },
+      ],
+    });
+  };
+
+  deleteTableItem = (value) => {
+    this.setState({ table: value });
+  };
+
+  vehicleForPostData2 = (ownershipValue) => {
+    const tempData = this.state.postData2;
+    tempData.vehicles.push({
+      year: this.state.postData.Vehicle_1_Year,
+      model: this.state.postData.Vehicle_1_Model,
+      primary_purpose: this.state.postData.Vehicle_1_Primary_Use,
+      annual_mileage: this.state.postData.Vehicle_1_Annual_Mileage,
+      ownership: ownershipValue,
+    });
+
+    this.setState({ postData2: tempData });
+  };
+
+  deleteVehicleForPostData2 = (value) => {
+    this.setState({ postData2: value });
   };
     yearForVehicleName = (value) => {
       this.setState({ year: value });
     };
-
+   
+  nameForVehicalModel = (value) => {
+    this.setState({ name: value });
+  };
+ 
    render() {
 
 
      return (
         <ThemeProvider>
-       <NavBar/>
-     
+    
+
+          <NavBar/>
+        
+          {/* <BrowserRouter>
+        <Switch>
+           <Route path="/land1" component={LandingPage1} > </Route>
+           <Route path="/land2" component={LandingPage2} > </Route>
+           <Route path="/land3" component={LandingPage3} > </Route>
+         </Switch>
+        </BrowserRouter>
+        */}
+
+  <StepWizard initialStep={1}>
+  <LandingPage1/>
+  <LandingPage2/>
+  <LandingPage3/>
+  <Step2/>  
 <Step_three 
 yearForVehicleName={this.yearForVehicleName}
 Vehicle_1_Year={(value) =>
@@ -120,15 +215,80 @@ postData: { ...this.state.postData, Vehicle_1_Year: value },
 }
 />
 
+<Step_4
+              year={this.state.year}
+              nameForVehicalModel={this.nameForVehicalModel}
+              Vehicle_1_Make={(value) =>
+                this.setState({
+                  postData: { ...this.state.postData, Vehicle_1_Make: value },
+                })
+              }
+          />
 
-{/**      <Step6/>    */}  
+<Step_5
+          searchModel={{ year: this.state.year, make: this.state.name }}
+          Vehicle_1_Model={(value) =>
+            this.setState({
+              postData: { ...this.state.postData, Vehicle_1_Model: value },
+            })
+          }
+          />
+    
+     <Step_6
 
-{/*   <LandingPage1/> */}
-{/*   <LandingPage2/> */}
-{/*   <LandingPage3/> */}
+name={this.state.name}
+Vehicle_1_Primary_Use={(value) =>
+  this.setState({
+    postData: {
+      ...this.state.postData,
+      Vehicle_1_Primary_Use: value,
+    
+    },
+  })
+}
+
+Vehicle_1_Annual_Mileage={(value) =>
+  this.setState({
+    postData: {
+      ...this.state.postData,
+      Vehicle_1_Annual_Mileage: value,
+    },
+  })
+} 
+
+Vehicle_1_Coverage_Type={(value) =>
+  this.setState({
+    postData: {
+      ...this.state.postData,
+      Vehicle_1_Coverage_Type: value,
+    },
+  })
+}
+
+name={this.state.name}
+maintainTable={this.maintainTable}
+vehicleForPostData2={this.vehicleForPostData2}
+Vehicle_1_Ownership={(value) =>
+  this.setState({
+    postData: {
+      ...this.state.postData,
+      Vehicle_1_Ownership: value,
+    },
+  })
+}
+
+/>
 
 
-{/**     <Step2/>     */}      
+ 
+</StepWizard> 
+
+
+
+
+
+
+ {/*       */}      
 {/**      <Step3/>    */}
 {/**     <Step4/>     */}   
 {/*      <Step5/>     */}

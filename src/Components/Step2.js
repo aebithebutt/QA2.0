@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Div,Text,Button} from "atomize";
+import { Div,Text} from "atomize";
+import { Button } from 'react-bootstrap';
 import {ProgressBar,Card} from 'react-bootstrap';
 import {Input,Tooltip,Select} from 'antd';
 
@@ -11,6 +12,9 @@ import BasicDropdown from './BasicDropdown'
 import ImagesLine from './ImagesLine'
 
 class Step2 extends Component {
+    move=()=>{
+        this.props.nextStep();
+  }
   
     render() {
         const { Option } = Select;
@@ -109,7 +113,7 @@ class Step2 extends Component {
 
                       
                         <Div className="row row-center" >
-                                    <Button className="base-btn" >
+                                    <Button className="base-btn" onClick={()=>this.move()}>
 
                                                Next
                                     

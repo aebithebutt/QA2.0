@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import './MainBody.css';
-import { Div,Text,Input,Button} from "atomize";
+import { Div,Text,Input} from "atomize";
+import {Button} from "react-bootstrap";
 class MainBody extends Component {
+  move=()=>{
+        this.props.nextStep();
+  }
+   
     render() {
         return (
             <>
@@ -30,11 +35,16 @@ class MainBody extends Component {
        </Div>
 
        <Div className="row">
-           
-                  <Input className="body_input pg1-text" placeholder="Address" />
-                  <Button className="input_button"></Button>
+           <Div className="col-6">
+           <Input className="body_input pg1-text" placeholder="Address" />
+           </Div>
+              
+           <Div className="col-6">
+           <Button className="input_button" onClick={()=>this.move()}></Button>
+           </Div>
 
        </Div>
+      
        </>
         );
     }

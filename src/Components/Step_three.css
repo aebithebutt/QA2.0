@@ -18,7 +18,7 @@ padding-right: 25px;
         width: 32.5px;
     height: 32.5px;
     margin-left: 22.5px;
-    margin-top: 21.5px;
+ 
   
 }
 
@@ -58,8 +58,8 @@ font-family: Inter;
 font-style: normal;
 font-weight: 500;
 font-size: 18px;
-line-height: 24px;
-margin-left: 25px;
+line-height: 20px;
+margin-left: 28px;
 }
 
 .year-btn:hover{
@@ -68,8 +68,8 @@ margin-left: 25px;
 }
 .drop-down-step3
 {
-    width: 161px;
-    margin-top:5px;
+    width: 212px;
+    margin-top:40px;
 
     }
 

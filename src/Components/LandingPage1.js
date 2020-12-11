@@ -18,7 +18,7 @@ class LandingPage1 extends Component {
                          <Div className="col-lg-6 col-md-6 col-sm-6" >
                            
                     {/*-------------------- Separate Component for Main Body----------------------- */}
-                            <MainBody/>
+                            <MainBody nextStep={this.props.nextStep}/>
                     {/*-------------------- Separate Component for Images----------------------- */}
                             <ImagesLine/>
                     {/*-------------------- Separate Component for Bottom Tag----------------------- */} 

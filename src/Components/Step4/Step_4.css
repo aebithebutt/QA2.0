@@ -1,9 +1,8 @@
-/*
-.row-center-step3{
+.row-center-step4{
     justify-content:center;
 display:flex;
 }
-.cardhandle-step3{
+.cardhandle-step4{
 height:500px;
 margin-top:35px;
 box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
@@ -15,14 +14,14 @@ padding-left: 25px;
 padding-right: 25px;
 }
 
-.iconback{
+.iconback-step4{
         width: 32.5px;
     height: 32.5px;
     margin-left: 22px;
   
 }
 
-.heading-one-step3{
+.heading-one-step4{
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -36,7 +35,7 @@ padding-right: 25px;
     margin-right: 455px;
     margin-top: 44px;
     }
-.mainHeading-step3{
+.mainHeading-step4{
     font-family: Roboto;
 font-style: normal;
 font-weight: bold;
@@ -46,7 +45,7 @@ color: #000000;
 margin-bottom: 10px;
 }
 
-.year-btn{
+.car-btn{
 
 border-radius: .25rem;
 Width:65%;
@@ -58,22 +57,22 @@ font-family: Inter;
 font-style: normal;
 font-weight: 500;
 font-size: 18px;
-line-height: 24px;
-margin-left:28px ;
+line-height: 20px;
+margin-left:30px ;
 }
 
-.year-btn:hover{
+.car-btn:hover{
     background-color: #007bff;
     color: #ffffff;
 }
-.drop-down-step3
+.drop-down-step4
 {
-    width: 161px;
-    margin-top:5px;
+    width: 212px;
+    margin-top:40px;
 
     }
 
-    .base-btn-step3{
+    .base-btn-step4{
         background: #488BFF;
         border-radius: 8px;
         Width:161px;
@@ -82,12 +81,11 @@ margin-left:28px ;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
-        line-height: 24px;
-     
+        line-height: 20px;
+        /* identical to box height, or 171% */
         color: #FFFFFF;
         
         align-items: center;
         text-align: center;
         
         }
-*/

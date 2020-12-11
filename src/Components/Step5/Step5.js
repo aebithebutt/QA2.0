@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import ImagesLine from '../ImagesLine'
 import { Div,Text,Icon,Button} from "atomize";
@@ -118,4 +119,4 @@ class Step5 extends Component {
     }
 }
 
-export default Step5;
+export default Step5; */
