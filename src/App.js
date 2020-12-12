@@ -14,6 +14,7 @@ import Step_4 from './Components/Step4/Step_4'
 import Step5 from './Components/Step5/Step5'
 import Step_5 from './Components/Step5/Step_5'
 import Step_6 from './Components/Step6/Step_6'
+import Step_7_Addanother from './Components/Step_7_Addanother/Step_7_Addanother'
 import Step_three from './Components/Step_three'
 import StepWizard from "react-step-wizard";
 
@@ -191,7 +192,7 @@ import React, { Component } from 'react';
     
 
           <NavBar/>
-        
+      
           {/* <BrowserRouter>
         <Switch>
            <Route path="/land1" component={LandingPage1} > </Route>
@@ -278,11 +279,15 @@ Vehicle_1_Ownership={(value) =>
 }
 
 />
-
+  <Step_7_Addanother
+ table={this.state.table}
+ deleteTableItem={this.deleteTableItem}
+ postData2={this.state.postData2}
+ deleteVehicleForPostData2={this.deleteVehicleForPostData2}
+          />
 
  
 </StepWizard> 
-
 
 
 

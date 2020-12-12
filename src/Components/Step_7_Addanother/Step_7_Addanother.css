@@ -1,0 +1,114 @@
+
+.row-center-step7{
+    justify-content:center;
+display:flex;
+}
+
+.heading-one-step7{
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 23px;
+line-height: 27px;
+text-align: center;
+justify-content:center;
+display:flex;
+
+color: #000000;
+margin-right: 530px;
+    margin-top: 44px;
+}
+.iconback-step7{
+    width: 32.5px;
+height: 32.5px;
+margin-left: 22.5px;
+margin-top:10px ;
+
+
+}
+.inner-card{
+    width: 312px;
+    height: 72px;
+    background: #FFFFFF;
+
+    margin-top: 10px;
+border: 1px solid #FAFBFB;
+box-sizing: border-box;
+
+box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+}
+.year-name{
+    font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 22px;
+margin-left:25px;
+margin-top:16px;
+color: #0A1F44;
+}
+.model{
+    color:#8A94A6;
+    margin-left:10px;
+
+    font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 20px;
+
+}
+
+.icon-cross{
+    cursor:pointer;
+    margin-top: 7px;
+    margin-left: 20px;
+    width: 15px;
+    height:15px;
+
+}
+.icon-plus{
+    width: 20px;
+    height:20px;
+    margin-top:25px;
+   
+
+}
+.base-btn-step7{
+background: #488BFF;
+border-radius: 8px;
+Width:161px;
+margin-bottom: 89px;
+Height:49px;
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+/* identical to box height, or 171% */
+color: #FFFFFF;
+margin-top: 161px;
+align-items: center;
+text-align: center;
+
+}
+.icon-card{
+    height:27px;
+  margin-left: 9px;
+    margin-top:5px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius:2rem;
+    width:27px;
+    border:0px;
+}
+.cardhandle-step7{
+
+
+padding-left: 20px;
+margin-top:35px;
+box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+border-radius:0.8rem;
+width:750px;
+border:0px;
+}

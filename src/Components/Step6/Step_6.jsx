@@ -21,17 +21,18 @@ class Step_6 extends Component {
 }
 
 	next = (e) => {
-	
+        
+		
         this.props.Vehicle_1_Primary_Use(e.target.lastChild.data,e.target.lastChild.data);
         this.props.Vehicle_1_Annual_Mileage(e.target.lastChild.data); 
         this.props.Vehicle_1_Coverage_Type(e.target.lastChild.data);
     	this.props.Vehicle_1_Ownership(e.target.lastChild.data);
-		this.props.maintainTable();
 		this.props.vehicleForPostData2(e.target.lastChild.data);
 
     }
     moveForward=(e)=>{
         this.props.nextStep();
+        this.props.maintainTable();
     }
     render() {
        
