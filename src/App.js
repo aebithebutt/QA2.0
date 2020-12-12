@@ -290,21 +290,10 @@ Vehicle_1_Ownership={(value) =>
 </StepWizard> 
 
 
-
-
-
- {/*       */}      
-{/**      <Step3/>    */}
-{/**     <Step4/>     */}   
-{/*      <Step5/>     */}
-
-
-       <StyleReset></StyleReset>
-  </ThemeProvider>
-         
-  
+</ThemeProvider>
      );
-   }
+}
  }
- 
+
  export default App;
+
