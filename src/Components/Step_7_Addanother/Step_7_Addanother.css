@@ -71,7 +71,9 @@ line-height: 20px;
 .icon-plus{
     width: 20px;
     height:20px;
-    margin-top:25px;
+    margin-top:22px;
+    margin-left:10px ;
+    cursor:pointer;
    
 
 }
@@ -95,8 +97,8 @@ text-align: center;
 }
 .icon-card{
     height:27px;
-  margin-left: 9px;
-    margin-top:5px;
+  margin-left: 12px;
+    margin-top:2px;
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
     border-radius:2rem;
     width:27px;

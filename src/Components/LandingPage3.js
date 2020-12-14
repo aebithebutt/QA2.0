@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Div,Text,Input,Image,Button} from "atomize";
+import { Div,Text,Input,Image} from "atomize";
 import './MainBody.css';
+import {Button} from 'react-bootstrap'
 import BottomTag from './BottomTag'
 import ImagesLine from './ImagesLine'
 class LandingPage3 extends Component {

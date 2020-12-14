@@ -15,6 +15,10 @@ import Step5 from './Components/Step5/Step5'
 import Step_5 from './Components/Step5/Step_5'
 import Step_6 from './Components/Step6/Step_6'
 import Step_7_Addanother from './Components/Step_7_Addanother/Step_7_Addanother'
+import Step_8_Currentinsurance from './Components/Step_8_Currentinsurance/Step_8_Currentinsurance'
+import Step_9_DriverHistory from './Components/Step_9_DriverHistory/Step_9_DriverHistory'
+import Step_10_HomeOwner from './Components/Step_10_HomeOwner/Step_10_HomeOwner'
+import Step_11_LastPage from './Components/Step_11_LastPage/Step_11_LastPage'
 import Step_three from './Components/Step_three'
 import StepWizard from "react-step-wizard";
 
@@ -183,7 +187,18 @@ import React, { Component } from 'react';
   nameForVehicalModel = (value) => {
     this.setState({ name: value });
   };
- 
+  currentCompanyForPostData2 = (value) => {
+    this.setState({ current_company: value });
+  };
+  continuousCoverageForPostData2 = (value) => {
+    this.setState({ continuous_coverage: value });
+  };
+  sr22ForPostData2 = (value) => {
+    this.setState({ sr_22: value });
+  };
+  homeOwnershipForPostData2 = (value) => {
+    this.setState({ home_ownership: value });
+  };
    render() {
 
 
@@ -192,7 +207,7 @@ import React, { Component } from 'react';
     
 
           <NavBar/>
-      
+ 
           {/* <BrowserRouter>
         <Switch>
            <Route path="/land1" component={LandingPage1} > </Route>
@@ -202,7 +217,7 @@ import React, { Component } from 'react';
         </BrowserRouter>
         */}
 
-  <StepWizard initialStep={1}>
+   <StepWizard initialStep={1}>
   <LandingPage1/>
   <LandingPage2/>
   <LandingPage3/>
@@ -285,9 +300,27 @@ Vehicle_1_Ownership={(value) =>
  postData2={this.state.postData2}
  deleteVehicleForPostData2={this.deleteVehicleForPostData2}
           />
+           <Step_8_Currentinsurance
+         currentCompanyForPostData2={this.currentCompanyForPostData2}
+         continuousCoverageForPostData2={this.continuousCoverageForPostData2}
+         />
+           <Step_9_DriverHistory
+      sr22ForPostData2={this.sr22ForPostData2}
+      Driver_1_Filing_Required={(value) =>
+        this.setState({
+          postData: {
+            ...this.state.postData,
+            Driver_1_Filing_Required: value,
+          },
+        })
+      }
+     />
 
- 
-</StepWizard> 
+  <Step_10_HomeOwner  
+  homeOwnershipForPostData2={this.homeOwnershipForPostData2}
+  />
+   <Step_11_LastPage/>
+</StepWizard>  
 
 
 </ThemeProvider>

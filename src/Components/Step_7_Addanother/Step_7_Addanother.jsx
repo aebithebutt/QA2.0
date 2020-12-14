@@ -23,14 +23,18 @@ class Step_7_Addanother extends Component {
 		var tempArray = this.state.postData2;
 		tempArray.vehicles = [...tempArray.vehicles.slice(0, index), ...tempArray.vehicles.slice(index + 1)];
 		this.props.deleteVehicleForPostData2(tempArray);
-	};
+    };
+    moveForward=(e)=>{
+        this.props.nextStep();
+      
+    }
 
     render() {
         return (
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)"}}>
              
             <Div className="row-center">
-               <ProgressBar now={10} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+               <ProgressBar now={65} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
             </Div>
            
           
@@ -125,7 +129,7 @@ class Step_7_Addanother extends Component {
                     
 </Div>
                     <Div className="row row-center" >
-                                <Button className="base-btn-step7" >Next</Button>
+                                <Button className="base-btn-step7" 	onClick={(e) => this.moveForward(e)}>Next</Button>
                           
                           </Div>
                        

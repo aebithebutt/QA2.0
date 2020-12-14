@@ -64,5 +64,30 @@ code {
 margin-top: 5px !important;
 font-style: 16px;
   }
-  
- 
+.ant-slider-rail{
+
+  background: #488BFF !important;
+  border-radius: 10px !important;
+
+height: 9px !important;
+  }
+  .ant-slider-track{
+    background: #488BFF !important;
+  border-radius: 10px !important;
+  height: 9px !important;
+
+  }
+
+  .ant-slider-handle{
+    width: 20px !important;
+    height: 20px !important;
+    background: #F9F9F9 !important;
+border: 1px solid #C8C4C4 !important;
+box-sizing: border-box !important;
+  }
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder{
+margin-top:5px !important ;
+  }
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+    margin-top: 5px !important;
+  }

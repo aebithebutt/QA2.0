@@ -49,7 +49,7 @@ class Step_6 extends Component {
                       </Div>
 
                       <Div className="row row-center-step6" >
-                        <Text className="heading-one-step6" tag="h1"> What Is the Model of your car?</Text>
+                        <Text className="heading-one-step6" tag="h1">Some Information About You {this.props.name}</Text>
                 </Div>
 
                     <Div className="row row-center-step6" >
@@ -77,7 +77,7 @@ class Step_6 extends Component {
                                <Option value="Commute">
 					            		<button
 						            		className=""
-						            		style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+						            		style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 							           	onClick={(e) => this.next(e)}
 							                >
 							        	Commute
@@ -89,7 +89,7 @@ class Step_6 extends Component {
                       
 						                	<button
 						            		className=""
-                                            style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+                                            style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 							            onClick={(e) => this.next(e)}
 						                        	>
 							                	Pleasure
@@ -100,7 +100,7 @@ class Step_6 extends Component {
 					
 							               <button
                                               className=""
-                                              style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+                                              style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 								         onClick={(e) => this.next(e)}
 						                      	>
 							                	Business
@@ -127,7 +127,7 @@ class Step_6 extends Component {
                              <Option value="Under 5,000">
                                 <button
 									className=""
-									style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+									style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 								onClick={(e) => this.next(e)}
 							    >
 									Under 5,000
@@ -138,7 +138,7 @@ class Step_6 extends Component {
 							
 								<button
 									className=""
-									style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+									style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 							        onClick={(e) => this.next(e)}
 								>
 									5,001 - 10,000
@@ -149,7 +149,7 @@ class Step_6 extends Component {
 						
 								<button
 									className=""
-									style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+									style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 								onClick={(e) => this.next(e)}
 								>
 									10,001 - 15,000
@@ -159,7 +159,7 @@ class Step_6 extends Component {
 							
 								<button
 									className=""
-                                    style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+                                    style={{ marginTop:"3px",backgroundColor:"transparent",border:"none"}} 
 									onClick={(e) => this.next(e)}
 								>
 									15,000+
@@ -237,7 +237,7 @@ class Step_6 extends Component {
             <Option value="Superior">
                 <button
                     className=""
-                    style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+                    style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
             	onClick={this.next}
                 >
                     Superior
@@ -248,7 +248,7 @@ class Step_6 extends Component {
                 <Option value="Standard">
                 <button
                     className=""
-                    style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+                    style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
             		onClick={this.next}
                 >
                     Standard
@@ -260,7 +260,7 @@ class Step_6 extends Component {
                 <Option value="Basic">
                 <button
                     className=""
-                    style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+                    style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
                 	onClick={this.next}
                 >
                     Basic
@@ -270,7 +270,7 @@ class Step_6 extends Component {
                 <Option value="State minimum">
                 <button
                     className=""
-                    style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+                    style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
             		onClick={this.next}
                 >
                     State minimum
@@ -356,7 +356,7 @@ class Step_6 extends Component {
                                   <Option value="Leased">
                                     <button
                                         className=""
-                                        style={{ marginTop:"3px",backgroundColor:"transparent" }}
+                                        style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }}
                                     	onClick={this.next}
                                     >
                                         Leased
@@ -366,7 +366,7 @@ class Step_6 extends Component {
                                     <Option value="Financed">
                                     <button
                                         className=""
-                                        style={{ marginTop:"3px",backgroundColor:"transparent" }}
+                                        style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }}
                                    	onClick={this.next}
                                     >
                                         Financed
@@ -376,7 +376,7 @@ class Step_6 extends Component {
                                 <Option value="Owned">
                                     <button
                                         className=""
-                                        style={{ marginTop:"3px",backgroundColor:"transparent" }}
+                                        style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }}
                                     	onClick={this.next}
                                     >
                                         Owned
