@@ -2,19 +2,50 @@ import React, { Component } from 'react';
 import { Div,Text} from "atomize";
 import { Button } from 'react-bootstrap';
 import {ProgressBar,Card} from 'react-bootstrap';
-import {Input,Tooltip,Select} from 'antd';
+import {Input,Tooltip,Select,Form} from 'antd';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Step2.css';
-import BasicDropdown from './BasicDropdown'
+//import BasicDropdown from './BasicDropdown'
 
 import ImagesLine from './ImagesLine'
 
 class Step2 extends Component {
+    state = {
+		startDate: new Date(),
+        dateValue: "",
+        check:"",
+        check2:"",
+        check3:"",
+        check4:"",
+        check5:"",
+        check6:"",
+
+
+	};
     move=()=>{
         this.props.nextStep();
   }
+  onFinish = (values) => {
+//   this.props.nextStep();
+    this.props.Driver_1_First_Name(values.firstName);
+    this.props.Driver_1_Last_Name(values.lastName);
+    this.props.Driver_1_Birthdate(this.state.dateValue);
+};
+
+onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+    
+};
+onChangeHandler = (e) => {
+    var value = e.target.value;
+    value = value
+        .replace(/^(\d\d)(\d)$/g, "$1/$2")
+        .replace(/^(\d\d\/\d\d)(\d+)$/g, "$1/$2")
+        .replace(/[^\d\/]/g, "");
+    this.setState({ dateValue: value });
+};
   
     render() {
         const { Option } = Select;
@@ -37,52 +68,186 @@ class Step2 extends Component {
             
              <Div className="row row-center" >
                 <Card className="cardhandle">
+
+                <Form
+						name="basic"
+						initialValues={{
+							remember: true,
+						}}
+						onFinish={this.onFinish}
+						onFinishFailed={this.onFinishFailed}
+					>
                    
                     <Div className="row" style={{marginTop:"10px"}}>
                             <Div className="col-lg-6 col-md-6 col-sm-6 ">
-                           
-                 {/* <InputField/>*/}         
-                           
-                   {/*      <Input className="input-field" placeholder="First Name" 
-                                             />  */}
+                            <Form.Item
+							name="firstName"
+							hasFeedback
+							rules={[
+								{
+									required: true,
+									message: "Please enter first name!",
+								},
+							]}
+						>
+						
       
-                                      <Input className="input-field" placeholder="First Name" 
-                                               
+                                      <Input className="input-field" 
+                                    //  defaultValue="First Name" 
+                                      placeholder="First Name" 
+                                              
+                                            //   onChange={(value) => {
+                                            //         console.log(value)
+                                            //         if(value !== 'First Name'){
+                                            //             this.setState({
+                                            //                 check1 : 'true'
+                                            //             })
+                                            //         }else{
+                            
+                                            //         }
+                                            //     }
+                                            // }
                                       />
                   
                                 
-                                
+                                </Form.Item>
                                 </Div>
 
                                 <Div className="col-lg-6 col-md-6 col-sm-6">
-                          
+                                <Form.Item
+							name="lastName"
+							hasFeedback
+							rules={[
+								{
+									required: true,
+									message: "Please enter last name!",
+								},
+							]}
+						>
      
-                                <Input className="input-field" placeholder="Last Name" />
+                                <Input className="input-field"
+                               //  defaultValue="Last Name" 
+                                 placeholder="Last Name" 
+                                
+                            //     onChange={(value) => {
+                            //         console.log(value)
+                            //         if(value !== 'Last Name'){
+                            //             this.setState({
+                            //                 check2 : 'true'
+                            //             })
+                            //         }else{
+            
+                            //         }
+                            //     }
+                            // }
+                                />
                                      
-                             
+                             </Form.Item>
                                       </Div>
                          </Div>
 
                     <Div className="row" style={{marginTop:"0px"}}>
                             <Div className="col-lg-6 col-md-6 col-sm-6">
-                                <Input className="input-field" placeholder="Phone Number" />
+                                <Input className="input-field" 
+                               // defaultValue="Phone Number" 
+                                placeholder="Phone Number"  
+                                
+                            //     onChange={(value) => {
+                            //         console.log(value)
+                            //         if(value !== 'Phone Number'){
+                            //             this.setState({
+                            //                 check3 : 'true'
+                            //             })
+                            //         }else{
+            
+                            //         }
+                            //     }
+                            // }
+                                />
                                 </Div>
 
                                 <Div className="col-lg-6 col-md-6 col-sm-6">
-                                <Input className="input-field" placeholder="Email" />
+                                <Input className="input-field" 
+                                //defaultValue="Email" 
+                                placeholder="Email"
+                            //      onChange={(value) => {
+                            //         console.log(value)
+                            //         if(value !== 'Email'){
+                            //             this.setState({
+                            //                 check4 : 'true'
+                            //             })
+                            //         }else{
+            
+                            //         }
+                            //     }
+                            // }
+                                />
                                       </Div>
                          </Div>
 
                     <Div className="row" style={{marginTop:"0px"}}>
 
                             <Div className="col-lg-6 col-md-6 col-sm-6 ">
-                                   <BasicDropdown/>     
-   
+                                
+                            <Form.Item
+										name="gender"
+									
+										hasFeedback
+										rules={[
+											{
+												required: true,
+												message: "Please select an option!",
+											},
+										]}
+									
+									>
+                            <Select className="drop-down" defaultValue="Gender" onChange={(value) => 
+                                                {this.props.Driver_1_Gender(value)
+                                                if(value !== 'Gender'){
+                                                    this.setState({
+                                                        check5 : 'true'
+                                                    })
+                                                }
+                                                else {
+
+                                                }
+                                                
+                                                }
+                                        
+                                                }>
+                                  
+                                        <Option value="male">Male</Option>
+                                        <Option value="female">Female</Option>
+                                        
+                                        <Option value="Non Binary">Non Binary</Option>
+                                        </Select>
+                                                                    
+                                </Form.Item>
                                 </Div>
 
                                 <Div className="col-lg-6 col-md-6 col-sm-6 ">
                                
-                                             <Input className="input-field" placeholder="Date of Birth" />
+                                             <Input className="input-field" 
+                                             	placeholder="MM/DD/YYYY"
+                                                 size={"large"}
+                                                 maxLength={10}
+                                               //  defaultValue="MM/DD/YYYY"
+                                                 style={{ width: "100%" }}
+                                                 onChange={this.onChangeHandler}
+                                                 value={this.state.dateValue}
+                                            //      onChange={(value) => {
+                                            //         console.log(value)
+                                            //         // if(value !== 'MM/DD/YYYY'){
+                                            //         //     this.setState({
+                                            //         //         check6 : 'true'
+                                            //         //     })
+                                            //         // }else{
+                            
+                                            //         // }
+                                            //     }
+                                            // }
+                     
+                                             />
                                
                                 </Div>
 
@@ -111,16 +276,35 @@ class Step2 extends Component {
 
                                     </Div>
 
-                      
+                          
+             { 
+           //  this.state.check1=='true' &&   this.state.check2=='true'  &&   this.state.Check3=='true'  &&   this.state.check4=='true' &&
+                this.state.check5=='true' // &&   this.state.check6=='true'
+             ?
                         <Div className="row row-center" >
-                                    <Button className="base-btn" onClick={()=>this.move()}>
+                                   <Form.Item>
+                                    <Button className="base-btn" htmlType="submit"
+                                    disabled={false}
+                                    onClick={()=>this.move()}
+                                    >
 
                                                Next
                                     
                                       </Button>
-                              
-                        </Div>
-
+                                  
+                                      </Form.Item>
+                                      </Div>
+                                      :
+                              <Div className="row row-center-step6">
+                              <Form.Item>
+                              <Button className="base-btn-step6" style={{ background: "#B0B7C3"}}  disabled={true} >  Next </Button>
+                              </Form.Item>
+  
+                                </Div>
+           
+                       
+                    }
+                </Form>
                     </Card>
 
                     

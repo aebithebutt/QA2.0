@@ -180,6 +180,43 @@ import React, { Component } from 'react';
   deleteVehicleForPostData2 = (value) => {
     this.setState({ postData2: value });
   };
+  copyValuesToPostData2 = () => {
+    var tempArray = {
+      email: this.state.postData.Driver_1_Email,
+      phone: this.state.postData.Driver_1_Daytime_Phone,
+      address: this.state.postData.Driver_1_Address,
+      zip: this.state.postData.Driver_1_Zip,
+      home_ownership: this.state.home_ownership,
+      vehicles: this.state.postData2.vehicles,
+      drivers: [
+        {
+          driver:
+            this.state.postData.Driver_1_First_Name +
+            " " +
+            this.state.postData.Driver_1_Last_Name,
+          gender: this.state.postData.Driver_1_Gender,
+          marital_status: this.state.postData.Driver_1_Marital_Status,
+          birth_date: this.state.postData.Driver_1_Birthdate,
+          education: this.state.postData.Driver_1_Education,
+          credit_rating: this.state.postData.Driver_1_Credit_Rating,
+          sr_22: this.state.sr_22,
+        },
+      ],
+      current_company: this.state.current_company,
+      continuous_coverage: this.state.continuous_coverage,
+      coverage_type: this.state.postData.Vehicle_1_Coverage_Type,
+    };
+    this.setState({ postData2: tempArray });
+    window.MediaAlphaExchange = {
+      placement_id: "1WNbWprsUtu4bb-7VkTVgf2l57oZew",
+      version: "17",
+      type: "ad_unit",
+      ua_class: "auto",
+      data: tempArray,
+    };
+    window.MediaAlphaExchange__load("target");
+    return this.state.postData2;
+  };
     yearForVehicleName = (value) => {
       this.setState({ year: value });
     };
@@ -221,7 +258,31 @@ import React, { Component } from 'react';
   <LandingPage1/>
   <LandingPage2/>
   <LandingPage3/>
-  <Step2/>  
+  <Step2
+   Driver_1_Gender={(value) =>
+    this.setState({
+      postData: { ...this.state.postData, Driver_1_Gender: value },
+    })
+  }
+  Driver_1_Birthdate={(value) =>
+    this.setState({
+      postData: { ...this.state.postData, Driver_1_Birthdate: value },
+    })
+  }
+  Driver_1_First_Name={(value) =>
+    this.setState({
+      postData: {
+        ...this.state.postData,
+        Driver_1_First_Name: value,
+      },
+    })
+  }
+  Driver_1_Last_Name={(value) =>
+    this.setState({
+      postData: { ...this.state.postData, Driver_1_Last_Name: value },
+    })
+  }
+  />  
 <Step_three 
 yearForVehicleName={this.yearForVehicleName}
 Vehicle_1_Year={(value) =>
