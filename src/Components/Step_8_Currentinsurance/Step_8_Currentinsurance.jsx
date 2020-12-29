@@ -8,13 +8,18 @@ import ImagesLine from '../ImagesLine'
 import {Form, Slider,Select } from 'antd';
 const { Option } = Select;
 class Step_8_Currentinsurance extends Component {
-    state = {};
+    state = {
+     
+        slider:"",
+    };
 
 
 	onFinish = (values) => {
 		this.props.nextStep();
-		this.props.currentCompanyForPostData2(values.insuranceCarrier);
-		this.props.continuousCoverageForPostData2(values.continuousCoverage);
+        this.props.currentCompanyForPostData2(values.insuranceCarrier);
+      //  console.log(values.insuranceCarrier)
+       this.props.continuousCoverageForPostData2(this.state.slider);
+     //   console.log(this.state.slider)
 	};
 
 	onFinishFailed = (errorInfo) => {
@@ -47,14 +52,14 @@ class Step_8_Currentinsurance extends Component {
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)",height:"930px"}}>
                    
                     <Div className="row-center-step8">
-                        <ProgressBar now={20} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+                        <ProgressBar now={75}  className="step8-progressBar"  />
                               </Div>
 
                               <Div className="row row-center-step8" >
                                 <Text className="heading-one-step8" tag="h1">Current Insurance Information</Text>
                         </Div>
 
-                            <Div className="row row-center-step8" >
+                            <Div className="row row-center-step8 card-row-step8" >
                                 <Card className="cardhandle-step8">
                                      
                                        <Div className="row">
@@ -281,7 +286,15 @@ class Step_8_Currentinsurance extends Component {
                                                
                                                 >
                                                     <Text tag="h2" style={{}} className="slider-text">Length Of Being Insured</Text>
-                                                           <Slider style={{marginTop:"28px"}} defaultValue={10} onChange={onChange} />
+                                                           <Slider style={{marginTop:"28px"}} defaultValue={10} onChange={(value)=>
+                                                        {
+                                                          //  console.log(value)
+
+                                                            this.setState({
+                                                                slider:value
+                                                            })
+                                                        }
+                                                        } />
                                                            
                                                 </Form.Item>
                                             

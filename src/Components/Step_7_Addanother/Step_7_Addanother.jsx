@@ -3,6 +3,7 @@ import { Div,Text,Image,Icon} from "atomize";
 import {ProgressBar,Card,Button} from 'react-bootstrap';
 import ImagesLine from '../ImagesLine'
 import './Step_7_Addanother.css';
+import ImagesLineBlock from '../ImagesLineBlock'
 class Step_7_Addanother extends Component {
     state = {
 		table: [],
@@ -10,11 +11,8 @@ class Step_7_Addanother extends Component {
 	};
 
 	UNSAFE_componentWillReceiveProps = (newProps) => {
-
-        this.setState({ table: newProps.table });
-      
-        this.setState({ postData2: newProps.postData2 });
-        
+		this.setState({ table: newProps.table });
+		this.setState({ postData2: newProps.postData2 });
 	};
 
 	updateTableData = (index) => {
@@ -23,10 +21,10 @@ class Step_7_Addanother extends Component {
 		var tempArray = this.state.postData2;
 		tempArray.vehicles = [...tempArray.vehicles.slice(0, index), ...tempArray.vehicles.slice(index + 1)];
 		this.props.deleteVehicleForPostData2(tempArray);
-    };
+	};
+    
     moveForward=(e)=>{
         this.props.nextStep();
-      
     }
 
     render() {
@@ -34,7 +32,7 @@ class Step_7_Addanother extends Component {
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)"}}>
              
             <Div className="row-center">
-               <ProgressBar now={65} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+               <ProgressBar now={65} className="step7-progressBar"  />
             </Div>
            
           
@@ -44,16 +42,16 @@ class Step_7_Addanother extends Component {
                     </Div>
 
         
-         <Div className="row row-center-step7" >
+         <Div className="row row-center-step7 card-row-step7" >
             <Card className="cardhandle-step7">
             <Div className="row">
                                                 <Icon name="LeftArrowSolid" color="#488BFF" className="iconback-step7" />
                                         </Div>
 
            <Div style={{marginTop:"117px"}}>
-            {this.state.table.length !== 0 &&
-                                    
-                                    this.state.table.map((entry, index) => (
+         
+           {this.state.table.length !== 0 &&
+							this.state.table.map((entry, index) => (
               <Div className="row row-center" >
                    
          
@@ -92,7 +90,7 @@ class Step_7_Addanother extends Component {
                                      <Div className="row">
                                            <Icon name="Plus"  className="icon-plus"
                                             style={{}}
-                                            onClick={() => this.props.goToStep(5)}  />
+                                            onClick={() => this.props.goToStep(3)}  />
                                    </Div>
                                    </Div>
                                              
@@ -141,8 +139,12 @@ class Step_7_Addanother extends Component {
                 </Div>
 
                                 <ImagesLine/>
+                                <Div className="col-sm-12" style={{marginTop:"50px"}} >
+                                               <ImagesLineBlock/>
+                                          </Div>
 
         </Div>
+        
         );
     }
 }

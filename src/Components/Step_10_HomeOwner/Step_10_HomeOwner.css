@@ -21,6 +21,12 @@ padding-right: 25px;
  
   
 }
+.step10-progressBar{
+    width:750px;
+    background:#E5E5E5;
+    border-radius:10px;
+    margin-top:30px;
+    }
 
 .heading-one-step10{
     font-family: Roboto;
@@ -39,7 +45,7 @@ padding-right: 25px;
 
 .drop-down-step10
 {
-    width: 312px;
+    width: 312px !important;
     margin-top:40px;
 
     }
@@ -61,3 +67,45 @@ padding-right: 25px;
         text-align: center;
         
         }
+        
+        
+        @media only screen and (max-width: 750px) {
+            .responsive-fields-step9{
+                display: flex;
+                justify-content: center;
+            }
+    
+            .drop-down-step10
+        {
+            width: 250px !important;
+        
+        }
+        .heading-one-step10{
+            margin-right: 0px;
+            font-size: 20px;
+        }
+        .step10-progressBar{
+            width: 340px ;
+        }
+        .card-row-step10{
+            padding: 25px;
+        }
+        }
+            
+        @media only screen and (max-width: 300px) {
+        
+            .heading-one-step10{
+                margin-right: 0px;
+                font-size: 17px;
+            }
+        }
+   
+        @media only screen and (max-width: 280px) {
+          
+            .drop-down-step10
+        {
+            width: 200px !important;
+        
+        }
+    }
+        

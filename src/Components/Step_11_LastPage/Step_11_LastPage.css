@@ -5,3 +5,13 @@ margin-top: 113px;
 margin-bottom: 113px;
 
 }
+
+@media only screen and (max-width: 750px) {
+   .last{ width: 448px;
+height: 348px;
+}}
+
+@media only screen and (max-width: 300px) {
+    .last{ width: 348px;
+ height: 248px;
+ }}

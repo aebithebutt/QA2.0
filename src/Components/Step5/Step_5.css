@@ -11,7 +11,7 @@ border-radius:0.8rem;
 width:750px;
 border:0px;
 padding:15px;
-padding-left: 25px;
+padding-left: 45px;
 padding-right: 35px;
 }
 
@@ -20,6 +20,12 @@ padding-right: 35px;
     height: 32.5px;
     margin-left: 22px;
   
+}
+.step5-progressBar{
+    width:750px; 
+    background: #E5E5E5;
+     border-radius: 10px;
+      margin-top:30px;
 }
 
 .heading-one-step5{
@@ -84,3 +90,57 @@ line-height: 20px;
         text-align: center;
         
         }
+
+        
+        @media only screen and (max-width: 1100px) {
+
+        
+            .heading-one-step5{
+                margin-right:0px; 
+                font-size: 20px;
+            
+            }
+            .mainHeading-step5{
+                font-size: 25px;
+            }
+            
+            .car-btn{
+            font-size: 12px;
+            width: 100%;
+            font-weight:700 ;
+            line-height: 9px;
+            }
+            .card-row-step5{
+                padding: 25px;
+            }
+                }
+
+                @media only screen and (max-width: 800px) {
+
+        
+                    .step5-progressBar{
+                        width: 340px;
+                    }
+                        }
+
+                @media only screen and (max-width: 450px) {
+
+                    .car-model-btn{
+                        font-size: 8px;
+                        width: 100%;
+                        font-weight:700 ;
+                        line-height: 8px;
+                        }
+                }
+                
+                @media only screen and (max-width: 350px) {
+
+                    .car-model-btn{
+                        font-size: 7px;
+                        width: 100%;
+                        font-weight:900 ;
+                        line-height: 7px;
+                        }
+
+                      
+                }

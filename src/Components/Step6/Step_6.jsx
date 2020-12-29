@@ -4,6 +4,7 @@ import { Div,Text,Icon} from "atomize";
 import {ProgressBar,Card} from 'react-bootstrap';
 import {Select,Button} from 'antd';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ImagesLineBlock from '../ImagesLineBlock'
 import './Step_6.css';
 
 class Step_6 extends Component {
@@ -11,6 +12,10 @@ class Step_6 extends Component {
         super(props);
         this.state = {
         
+           primaryuse:"",
+           mileage:"",
+           coverage:"",
+           ownership:"",
            dropCheck: 'false',
            dropCheck2:'false',
            dropCheck3:'false',
@@ -20,19 +25,38 @@ class Step_6 extends Component {
     };
 }
 
-	next = (e) => {
+primaryUse = (e) => {
         
-		
-        this.props.Vehicle_1_Primary_Use(e.target.lastChild.data,e.target.lastChild.data);
-        this.props.Vehicle_1_Annual_Mileage(e.target.lastChild.data); 
-        this.props.Vehicle_1_Coverage_Type(e.target.lastChild.data);
-    	this.props.Vehicle_1_Ownership(e.target.lastChild.data);
-		this.props.vehicleForPostData2(e.target.lastChild.data);
+    this.props.vehicle_primary_use(e.target.lastChild.data,e.target.lastChild.data);
+}
+mileage=(e)=>{
+    this.props.annual_mileage(e.target.lastChild.data);
+}
+coverage=(e)=>{
+    this.props.desired_coverage_level(e.target.lastChild.data);
+}
+ ownership=(e)=>{
+     this.props.vehicle_ownership(e.target.lastChild.data);
+         this.props.vehicleForPostData2(e.target.lastChild.data);
+        // this.props.maintainTable();
+ }
 
-    }
-    moveForward=(e)=>{
+
+    moveForward=()=>{
+
+     
         this.props.nextStep();
-        this.props.maintainTable();
+    //    this.props.vehicle_primary_use(this.state.primaryuse);
+    //    this.props.annual_mileage(this.state.mileage); 
+    //    this.props.desired_coverage_level(this.state.coverage);
+    //    this.props.vehicle_ownership(this.state.ownership);
+       this.props.maintainTable();
+     //  this.props.maintainTable();
+    //   this.props.vehicleForPostData2(e.target.lastChild.data);
+    
+    //   
+    //    
+    // 
     }
     render() {
        
@@ -45,14 +69,14 @@ class Step_6 extends Component {
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)"}}>
                    
             <Div className="row-center-step6">
-                <ProgressBar now={42} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+                <ProgressBar now={55} className="step6-progressBar" />
                       </Div>
 
                       <Div className="row row-center-step6" >
                         <Text className="heading-one-step6" tag="h1">Some Information About You {this.props.name}</Text>
                 </Div>
 
-                    <Div className="row row-center-step6" >
+                    <Div className="row row-center-step6 card-row-step6" >
                         <Card className="cardhandle-step6">
                              
                                <Div className="row">
@@ -60,13 +84,15 @@ class Step_6 extends Component {
                                 </Div>
                      
                  <Div className="row row-center-step6" style={{marginTop:"47.25px"}} >
-                   <Div className="col-lg-6 col-md-6 col-sm-6">    
+                   <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">    
                  <Select className="drop-down-step6" defaultValue="Primary use"  size="large" onChange={
                      (value) => {
+                    
                         console.log(value)
                         if(value !== 'Primary use'){
                             this.setState({
-                                dropCheck : 'true'
+                                dropCheck : 'true',
+                                primaryuse:value
                             })
                         }else{
 
@@ -78,7 +104,7 @@ class Step_6 extends Component {
 					            		<button
 						            		className=""
 						            		style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-							           	onClick={(e) => this.next(e)}
+							           	onClick={(e) => this.primaryUse(e)}
 							                >
 							        	Commute
 						            	</button>
@@ -90,7 +116,7 @@ class Step_6 extends Component {
 						                	<button
 						            		className=""
                                             style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-							            onClick={(e) => this.next(e)}
+                                             onClick={(e) => this.primaryUse(e)}
 						                        	>
 							                	Pleasure
 						                    	</button>
@@ -101,7 +127,7 @@ class Step_6 extends Component {
 							               <button
                                               className=""
                                               style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-								         onClick={(e) => this.next(e)}
+                                               onClick={(e) => this.primaryUse(e)}
 						                      	>
 							                	Business
                                            </button>
@@ -113,12 +139,13 @@ class Step_6 extends Component {
                      {/**    {
                                  this.state.dropCheck === 'true'
                                  ? */}    
-                                 <Div className="col-lg-6 col-md-6 col-sm-6">   
+                                 <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">   
                           <Select className="drop-down-step6" disabled={false} defaultValue="Mileage"  size="large"  onChange={(value) => {
                         console.log(value)
                         if(value !== 'Mileage'){
                             this.setState({
-                                dropCheck2 : 'true'
+                                dropCheck2 : 'true',
+                               mileage:value
                             })
                         }else{
 
@@ -128,18 +155,18 @@ class Step_6 extends Component {
                                 <button
 									className=""
 									style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-								onClick={(e) => this.next(e)}
+								 onClick={(e) => this.mileage(e)}
 							    >
 									Under 5,000
 								</button>
 							</Option>
 
-                            <Option value="5,000-10,000">
+                            <Option value="5,0001-10,000">
 							
 								<button
 									className=""
 									style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-							        onClick={(e) => this.next(e)}
+                                     onClick={(e) => this.mileage(e)}
 								>
 									5,001 - 10,000
 								</button>
@@ -150,7 +177,7 @@ class Step_6 extends Component {
 								<button
 									className=""
 									style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-								onClick={(e) => this.next(e)}
+                                     onClick={(e) => this.mileage(e)}
 								>
 									10,001 - 15,000
 								</button>
@@ -160,7 +187,7 @@ class Step_6 extends Component {
 								<button
 									className=""
                                     style={{ marginTop:"3px",backgroundColor:"transparent",border:"none"}} 
-									onClick={(e) => this.next(e)}
+									 onClick={(e) => this.mileage(e)}
 								>
 									15,000+
 								</button>
@@ -223,12 +250,14 @@ class Step_6 extends Component {
         {/**      {
             this.state.dropCheck2 === 'true'
                                     ? */}           
-        <Div className="col-lg-6 col-md-6 col-sm-6">  
+        <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">  
         <Select className="drop-down-step6" defaultValue="Coverage Wanted" disabled={false}  size="large"  onChange={
         (value)=>{
         if(value!=='Coverave Wanted'){
         this.setState({
-                dropCheck3: 'true'
+                dropCheck3: 'true',
+                coverage:value
+
         });
         }
         }
@@ -238,7 +267,7 @@ class Step_6 extends Component {
                 <button
                     className=""
                     style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-            	onClick={this.next}
+            	 onClick={this.coverage}
                 >
                     Superior
                 </button>
@@ -249,7 +278,7 @@ class Step_6 extends Component {
                 <button
                     className=""
                     style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-            		onClick={this.next}
+                     onClick={this.coverage}
                 >
                     Standard
                 </button>
@@ -261,17 +290,17 @@ class Step_6 extends Component {
                 <button
                     className=""
                     style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-                	onClick={this.next}
+                     onClick={this.coverage}
                 >
                     Basic
                 </button>
                 </Option>
             
-                <Option value="State minimum">
+                <Option value="state_0minimum">
                 <button
                     className=""
                     style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
-            		onClick={this.next}
+                     onClick={this.coverage}
                 >
                     State minimum
                             </button>
@@ -339,12 +368,13 @@ class Step_6 extends Component {
                    {/**    { 
                                         this.state.dropCheck3 ==='true'
                                         ? */}    
-                                <Div className="col-lg-6 col-md-6 col-sm-6">  
+                                <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">  
                                 <Select className="drop-down-step6" defaultValue="Ownership" disabled={false}   size="large"  onChange={
                                     (value)=>{
                                         if(value!=='Ownership'){
                                             this.setState({
-                                                dropCheck4 : 'true'
+                                                dropCheck4 : 'true',
+                                                ownership:value
                                             });
                                          
                                         }
@@ -357,7 +387,7 @@ class Step_6 extends Component {
                                     <button
                                         className=""
                                         style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }}
-                                    	onClick={this.next}
+                                    	onClick={this.ownership}
                                     >
                                         Leased
                                     </button>
@@ -367,7 +397,7 @@ class Step_6 extends Component {
                                     <button
                                         className=""
                                         style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }}
-                                   	onClick={this.next}
+                                         onClick={this.ownership}
                                     >
                                         Financed
                                     </button>
@@ -377,7 +407,7 @@ class Step_6 extends Component {
                                     <button
                                         className=""
                                         style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }}
-                                    	onClick={this.next}
+                                         onClick={this.ownership}
                                     >
                                         Owned
                                     </button>
@@ -452,6 +482,9 @@ class Step_6 extends Component {
       <ImagesLine/>
 
       </Div>
+      <Div className="col-sm-12" style={{marginTop:"50px"}} >
+                                               <ImagesLineBlock/>
+                                          </Div>
     </Div>
 
         );

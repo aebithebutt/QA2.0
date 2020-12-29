@@ -8,10 +8,9 @@ import LandingPage2 from './Components/LandingPage2';
 import LandingPage3 from './Components/LandingPage3';
 import NavBar from './Components/NavBar';
 import Step2 from './Components/Step2';
-import Step3 from './Components/Step3';
-import Step4 from './Components/Step4/Step4'
+
 import Step_4 from './Components/Step4/Step_4'
-import Step5 from './Components/Step5/Step5'
+
 import Step_5 from './Components/Step5/Step_5'
 import Step_6 from './Components/Step6/Step_6'
 import Step_7_Addanother from './Components/Step_7_Addanother/Step_7_Addanother'
@@ -22,17 +21,22 @@ import Step_11_LastPage from './Components/Step_11_LastPage/Step_11_LastPage'
 import Step_three from './Components/Step_three'
 import StepWizard from "react-step-wizard";
 
- 
 import React, { Component } from 'react';
  
  class App extends Component {
+
+
+   
  
   state = {
     postData: {
       // extra entries
+      lp_campaign_id:"5fe0d62882ef8",
+      lp_campaign_key:"Gn2J4NDMpk38vxyBbQm7",
+      zip_code:"54000",
       Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "22",
-      IP_Address: "",
+      IP_Address: "192.168.43.254",
       SRC: "Quantum_Website_Auto",
       Pub_ID: 13,
       Sub_ID: 12,
@@ -49,11 +53,11 @@ import React, { Component } from 'react';
       Vehicle_1_Average_Days_Per_Week_Used: 0,
       Vehicle_1_Desired_Collision_Coverage: "No Coverage",
       Vehicle_1_Desired_Comprehensive_Coverage: "No Coverage",
-      Driver_1_License_Status: "unknown",
+      Driver_1_License_Status: "",
       Driver_1_Age_When_First_Licensed: 0,
       Driver_1_Occupation: "Student",
       Driver_1_Current_Residence: "Other",
-      Driver_1_Tickets_Accidents_Claims_Past_3_Years: "unknown",
+      tickets_or_claims_in_last_three_years: "",
       Driver_1_Insured_Past_30_Days: "unknown",
       Driver_1_Continuously_Insured_Years: 1,
       Driver_1_Additional_Drivers: "No",
@@ -62,24 +66,24 @@ import React, { Component } from 'react';
       Driver_1_DUI_DWI_In_The_Past_5_Years: "unknown",
       Driver_1_Reposessions_In_The_Past_5_Years: "unknown",
       // S1
-      Driver_1_Zip: "",
-      Driver_1_City: "",
-      Driver_1_State: "",
+      // zip_code: "",
+      city: "",
+      state: "",
       Driver_1_Licensed_State: "",
       // S2
-      Vehicle_1_Year: 0,
+      vehicle_year: "",
       // S3
-      Vehicle_1_Make: "",
+      vehicle_make: "",
       // S4
-      Vehicle_1_Model: "",
+      vehicle_model: "",
       // S5
-      Vehicle_1_Primary_Use: "unknown",
+      vehicle_primary_use: "",
       // S6
-      Vehicle_1_Annual_Mileage: 0,
+      annual_mileage:"" ,
       // S7
-      Vehicle_1_Coverage_Type: "",
+      desired_coverage_level: "",
       // S8
-      Vehicle_1_Ownership: "",
+      vehicle_ownership: "",
       // S9
 
       // S10
@@ -92,26 +96,26 @@ import React, { Component } from 'react';
       // S12
       // Homeowner
       Driver_1_Marital_Status: "Single",
-      Driver_1_Gender: "",
+      gender: "",
       // S13
       Driver_1_Education: "",
       Driver_1_Credit_Rating: "unknown",
       // S14
-      Driver_1_Birthdate: "",
+      dob: "",
       // S15
-      Driver_1_First_Name: "",
-      Driver_1_Last_Name: "",
+      first_name: "",
+      last_name: "",
       // S16
-      Driver_1_Address: "",
-      Driver_1_Email: "",
-      Driver_1_Daytime_Phone: "",
+      address: "",
+      email_address: "",
+      phone_home: "",
     },
     postData2: {
       email: "",
       phone: "",
       address: "",
       zip: "",
-      home_ownership: 0,
+      home_ownership: "",
       vehicles: [
         // {
         // 	year: "",
@@ -153,7 +157,7 @@ import React, { Component } from 'react';
         ...this.state.table,
         {
           name: this.state.name,
-          model: this.state.postData.Vehicle_1_Model,
+          model: this.state.postData.vehicle_model,
           year: this.state.year,
         },
       ],
@@ -167,10 +171,10 @@ import React, { Component } from 'react';
   vehicleForPostData2 = (ownershipValue) => {
     const tempData = this.state.postData2;
     tempData.vehicles.push({
-      year: this.state.postData.Vehicle_1_Year,
-      model: this.state.postData.Vehicle_1_Model,
-      primary_purpose: this.state.postData.Vehicle_1_Primary_Use,
-      annual_mileage: this.state.postData.Vehicle_1_Annual_Mileage,
+      year: this.state.postData.vehicle_year,
+      model: this.state.postData.vehicle_model,
+      primary_purpose: this.state.postData.vehicle_primary_use,
+      annual_mileage: this.state.postData.annual_mileage,
       ownership: ownershipValue,
     });
 
@@ -182,21 +186,22 @@ import React, { Component } from 'react';
   };
   copyValuesToPostData2 = () => {
     var tempArray = {
-      email: this.state.postData.Driver_1_Email,
-      phone: this.state.postData.Driver_1_Daytime_Phone,
-      address: this.state.postData.Driver_1_Address,
-      zip: this.state.postData.Driver_1_Zip,
+      email: this.state.postData.email_address,
+      phone: this.state.postData.phone_home,
+      address: this.state.postData.address,
+
+      zip: this.state.postData.zip_code,
       home_ownership: this.state.home_ownership,
       vehicles: this.state.postData2.vehicles,
       drivers: [
         {
           driver:
-            this.state.postData.Driver_1_First_Name +
+            this.state.postData.first_name +
             " " +
-            this.state.postData.Driver_1_Last_Name,
-          gender: this.state.postData.Driver_1_Gender,
+            this.state.postData.last_name,
+          gender: this.state.postData.gender,
           marital_status: this.state.postData.Driver_1_Marital_Status,
-          birth_date: this.state.postData.Driver_1_Birthdate,
+          birth_date: this.state.postData.dob,
           education: this.state.postData.Driver_1_Education,
           credit_rating: this.state.postData.Driver_1_Credit_Rating,
           sr_22: this.state.sr_22,
@@ -204,7 +209,7 @@ import React, { Component } from 'react';
       ],
       current_company: this.state.current_company,
       continuous_coverage: this.state.continuous_coverage,
-      coverage_type: this.state.postData.Vehicle_1_Coverage_Type,
+      coverage_type: this.state.postData.desired_coverage_level,
     };
     this.setState({ postData2: tempArray });
     window.MediaAlphaExchange = {
@@ -243,7 +248,7 @@ import React, { Component } from 'react';
         <ThemeProvider>
     
 
-          <NavBar/>
+        <NavBar/> 
  
           {/* <BrowserRouter>
         <Switch>
@@ -255,39 +260,156 @@ import React, { Component } from 'react';
         */}
 
    <StepWizard initialStep={1}>
-  <LandingPage1/>
-  <LandingPage2/>
-  <LandingPage3/>
-  <Step2
-   Driver_1_Gender={(value) =>
+  
+  <LandingPage1
+
+// address={(address_value)=>{
+// console.log(address_value)
+// console.log(`app.js address value ${address_value}` )
+
+//    this.setState({
+//       postData:{ ...this.state.postData, address: address_value.toString()}
+    
+//  })
+//   console.log(`this.state.postData.address ${this.state.postData.address}`)
+
+//      }
+//   }
+// city={(city_value)=>{
+// console.log(`app.js state ${city_value}` )
+
+//  console.log(city_value);
+//    this.setState({
+//       postData:{ ...this.state.postData, city: city_value.toString()}
+    
+//  })
+ 
+//      console.log(`this.state.postData.city ${this.state.postData.city}`)
+ 
+//  }
+
+// }
+  state={(value, address_value, city_value)=>{
+//console.log(`app.js state ${value} address ${address_value}  city ${city_value}` )
     this.setState({
-      postData: { ...this.state.postData, Driver_1_Gender: value },
+      postData:{ ...this.state.postData, state: value, address:address_value, city:city_value}
     })
+     console.log(`this.state.postData.address ${this.state.postData.state}`)
+}
   }
-  Driver_1_Birthdate={(value) =>
+ 
+
+//
+
+  />
+  {/* <LandingPage2
+  
+  // address={(value) =>
+
+  //   this.setState({
+  //     postData: { ...this.state.postData, address: value }
+  //   })
+  // }
+
+  // city={(value)=>
+
+  //   this.setState({
+  //     postData:{ ...this.state.postData, city: value}
+  //   })
+  // }
+
+   state={(value, address_value, city_value)=>{
+//console.log(`app.js state ${value} address ${address_value}  city ${city_value}` )
     this.setState({
-      postData: { ...this.state.postData, Driver_1_Birthdate: value },
+      postData:{ ...this.state.postData, state: value, address:address_value, city:city_value}
     })
+     console.log(`this.state.postData.address ${this.state.postData.state}`)
+}
   }
-  Driver_1_First_Name={(value) =>
+  />
+  <LandingPage3
+  
+  // address={(value) =>
+
+  //   this.setState({
+  //     postData: { ...this.state.postData, address: value }
+  //   })
+  // }
+
+  // city={(value)=>
+
+  //   this.setState({
+  //     postData:{ ...this.state.postData, city: value}
+  //   })
+  // }
+
+  state={(value, address_value, city_value)=>{
+//console.log(`app.js state ${value} address ${address_value}  city ${city_value}` )
+    this.setState({
+      postData:{ ...this.state.postData, state: value, address:address_value, city:city_value}
+    })
+     console.log(`this.state.postData.address ${this.state.postData.state}`)
+}
+  }
+  />  */}
+  
+   <Step2
+ 
+  first_name={(value) =>
+ // console.log(`this is ${value}`)
     this.setState({
       postData: {
         ...this.state.postData,
-        Driver_1_First_Name: value,
+        first_name: value,
       },
     })
   }
-  Driver_1_Last_Name={(value) =>
+ 
+  last_name={(value) =>
+  
+ // console.log(value)
     this.setState({
-      postData: { ...this.state.postData, Driver_1_Last_Name: value },
+      postData: { ...this.state.postData, last_name: value },
     })
   }
+  dob={(value) =>
+ // console.log(value)
+  
+    this.setState({
+      postData: { ...this.state.postData, dob: value },
+    })
+   }
+  email_address={(value) =>
+ //console.log(value)
+    this.setState({
+      postData: { ...this.state.postData, email_address: value },
+    })
+  }
+  phone_home={(value) =>
+  //console.log(value)
+    this.setState({
+      postData: {
+        ...this.state.postData,
+        phone_home: value,
+      },
+    })
+  }
+  gender={(value) =>
+//  console.log(value)
+    this.setState({
+      postData: { ...this.state.postData, gender: value },
+    })
+  }
+  
   />  
 <Step_three 
 yearForVehicleName={this.yearForVehicleName}
-Vehicle_1_Year={(value) =>
+
+
+vehicle_year={(value) =>
+ // console.log(value)
 this.setState({
-postData: { ...this.state.postData, Vehicle_1_Year: value },
+postData: { ...this.state.postData, vehicle_year: value },
 })
 }
 />
@@ -295,18 +417,20 @@ postData: { ...this.state.postData, Vehicle_1_Year: value },
 <Step_4
               year={this.state.year}
               nameForVehicalModel={this.nameForVehicalModel}
-              Vehicle_1_Make={(value) =>
+              vehicle_make={(value) =>
+             
                 this.setState({
-                  postData: { ...this.state.postData, Vehicle_1_Make: value },
+                  postData: { ...this.state.postData, vehicle_make: value },
                 })
               }
           />
 
 <Step_5
           searchModel={{ year: this.state.year, make: this.state.name }}
-          Vehicle_1_Model={(value) =>
+          vehicle_model={(value) =>
+          //  console.log(value)
             this.setState({
-              postData: { ...this.state.postData, Vehicle_1_Model: value },
+              postData: { ...this.state.postData, vehicle_model: value },
             })
           }
           />
@@ -314,30 +438,43 @@ postData: { ...this.state.postData, Vehicle_1_Year: value },
      <Step_6
 
 name={this.state.name}
-Vehicle_1_Primary_Use={(value) =>
-  this.setState({
-    postData: {
-      ...this.state.postData,
-      Vehicle_1_Primary_Use: value,
+vehicle_primary_use={(value) =>
+ // console.log(value)
+ this.setState({
+ 
+  postData:{
+    ...this.state.postData,
+   vehicle_primary_use:value
+  }
+  
+  
+  
+})
+  // this.setState({
+  //   postData: {
+  //     ...this.state.postData,
+  //     vehicle_primary_use: value,
     
-    },
-  })
+  //   },
+  // })
 }
 
-Vehicle_1_Annual_Mileage={(value) =>
+annual_mileage={(value) =>
+ // console.log(value)
   this.setState({
     postData: {
       ...this.state.postData,
-      Vehicle_1_Annual_Mileage: value,
+      annual_mileage: value,
     },
   })
 } 
 
-Vehicle_1_Coverage_Type={(value) =>
+desired_coverage_level={(value) =>
+ // console.log(value)
   this.setState({
     postData: {
       ...this.state.postData,
-      Vehicle_1_Coverage_Type: value,
+      desired_coverage_level: value,
     },
   })
 }
@@ -345,11 +482,12 @@ Vehicle_1_Coverage_Type={(value) =>
 name={this.state.name}
 maintainTable={this.maintainTable}
 vehicleForPostData2={this.vehicleForPostData2}
-Vehicle_1_Ownership={(value) =>
+vehicle_ownership={(value) =>
+//  console.log(value)
   this.setState({
     postData: {
       ...this.state.postData,
-      Vehicle_1_Ownership: value,
+      vehicle_ownership: value,
     },
   })
 }
@@ -367,7 +505,20 @@ Vehicle_1_Ownership={(value) =>
          />
            <Step_9_DriverHistory
       sr22ForPostData2={this.sr22ForPostData2}
+     
+      Driver_1_License_Status={(value) =>
+    //  console.log(value)
+          this.setState({
+          postData: {
+            ...this.state.postData,
+          Driver_1_License_Status: value,
+          },
+        })
+       }
+
       Driver_1_Filing_Required={(value) =>
+        
+       // console.log(value)
         this.setState({
           postData: {
             ...this.state.postData,
@@ -375,10 +526,23 @@ Vehicle_1_Ownership={(value) =>
           },
         })
       }
+
+     tickets_or_claims_in_last_three_years={(value,license_value) =>{
+     
+   //  console.log(value)
+      this.setState({
+          postData: {
+            ...this.state.postData,
+          tickets_or_claims_in_last_three_years: value,  Driver_1_License_Status: license_value,
+          },
+        })
+      }}
      />
 
   <Step_10_HomeOwner  
   homeOwnershipForPostData2={this.homeOwnershipForPostData2}
+  postData={this.state.postData}
+ 
   />
    <Step_11_LastPage/>
 </StepWizard>  

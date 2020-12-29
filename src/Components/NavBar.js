@@ -10,18 +10,18 @@ class NavBar extends Component {
             <Div className="Container" >
                                 <Div className="row">
                   
-                  <Div className="col-lg-12 col-md-12 col-sm-12 ">
+                  <Div className="col-12">
                 
                     <Navbar expand={'sm'|'lg'}  /* className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm"*/  >
                        
-                      <Div className="col-lg-6 col-md-6 col-sm-6 ">
+                      <Div className="col-6">
                            
-                              <Image className="img_logo" style={{ width: 262, height: 52}} src="assests/logo.png" alt="Logo"/>
+                              <Image className="img_logo"  src="assests/logo.png" alt="Logo"/>
                                
                       </Div>
 
                             
-                            <Div className="col-lg-6 col-md-6 col-sm-6 ">
+                            <Div className="col-6 ">
                             
                                 <Button  className="nav-btn">
                                       <Text className="nav-text">Call To Get Your Quote</Text>

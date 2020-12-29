@@ -40,7 +40,7 @@ border-radius: 3px;
 font-weight: normal;
 font-size: 20px;
 line-height: 38px;
-margin-left: 109px;
+margin-left: 99px;
 margin-top: 50px;
 }
 
@@ -50,3 +50,108 @@ margin-top: 50px;
     width: 125px;
     background: #488BFF !important;
 }
+@media only screen and (max-width: 400px) {
+    .body-text1{
+    margin-left: 50px;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 35px;
+
+    }
+    .body-text2{
+        margin-left: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        font-size: 23px;
+        line-height: 22px;
+    
+    }
+    .body_input{
+        margin-left: 40px;
+        width: 200px !important;
+        height: 63px;
+        border: 1px solid #488BFF;
+box-sizing: border-box;
+border-radius: 10px;
+font-weight: normal;
+font-size: 25px;
+line-height: 30px;
+
+color: #C8C4C4;
+    }
+    .input_button{
+        width: 100px;
+        height: 63px;
+        margin-left:26px ;
+background: #488BFF;
+border-radius: 10px;
+    }
+    .row_bodytext1{
+        margin-top: 70px;
+    }
+  }
+  
+@media only screen and (max-width: 1100px) {
+    .body-text1{
+    margin-left: 50px;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 35px;
+
+    }
+    .body-text2{
+        margin-left: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 22px;
+    
+    }
+    .body_input{
+        margin-left: 40px;
+        width: 240px;
+        height: 63px;
+        border: 1px solid #488BFF;
+box-sizing: border-box;
+border-radius: 10px;
+font-weight: normal;
+font-size: 25px;
+line-height: 30px;
+
+color: #C8C4C4;
+    }
+    .input_button{
+        width: 100px;
+        height: 63px;
+        margin-left:26px ;
+background: #488BFF;
+border-radius: 10px;
+    }
+    .row_bodytext1{
+        margin-top: 70px;
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    .body_input{
+      
+        width: 250px;
+     
+    }
+  }
+
+  
+  @media only screen and (max-width: 600px) {
+    .body_input{
+      
+        width: 280px;
+     
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    .body_input{
+      
+        width: 230px;
+     
+    }
+  }

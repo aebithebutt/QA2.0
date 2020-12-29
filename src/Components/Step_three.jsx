@@ -3,11 +3,13 @@ import { Div,Text,Icon} from "atomize";
 import {ProgressBar,Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Step_three.css';
-import {Select} from 'antd';
+import {Input, Select} from 'antd';
 import { Button } from 'react-bootstrap';
 import ImagesLine from './ImagesLine'
 import carYears from './carYears'
+import ImagesLineBlock from './ImagesLineBlock'
 const { Option } = Select;
+
 class Step_three extends Component {
 
     state = {
@@ -68,7 +70,7 @@ class Step_three extends Component {
 					<input
 						type="button"
 						
-					style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+					style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 						value={i}
 						onClick={this.moveNext}
 					/>
@@ -81,7 +83,7 @@ class Step_three extends Component {
 	moveNext = (e) => {
 		//this.setState({check:'true'});
 		this.props.nextStep(); 
-		this.props.Vehicle_1_Year(Number(e.target.value));
+		this.props.vehicle_year(Number(e.target.value));
 		this.props.yearForVehicleName(Number(e.target.value));
 	};
 		/**	move=()=>{
@@ -103,14 +105,14 @@ class Step_three extends Component {
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)",height:"930px"}}>
                    
                     <Div className="row-center-step3">
-                        <ProgressBar now={20} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+                        <ProgressBar now={20} className="step3-progressBar"  />
                               </Div>
 
                               <Div className="row row-center-step3" >
                                 <Text className="heading-one-step3" tag="h1"> What Is the Year of your car?</Text>
                         </Div>
 
-                            <Div className="row row-center-step3" >
+                            <Div className="row row-center-step3 card-row-step3" >
                                 <Card className="cardhandle-step3">
                                      
                                        <Div className="row">
@@ -173,6 +175,11 @@ class Step_three extends Component {
               <ImagesLine/>
 
               </Div>
+			  
+			  <Div className="col-sm-12" style={{marginTop:"50px"}} >
+                                               <ImagesLineBlock/>
+                                          </Div>
+
               </Div>
         );
     }

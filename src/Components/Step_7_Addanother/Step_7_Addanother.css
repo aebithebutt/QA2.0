@@ -114,3 +114,42 @@ border-radius:0.8rem;
 width:750px;
 border:0px;
 }
+
+.step7-progressBar{
+    width:750px;
+    background:#E5E5E5;
+    border-radius:10px;
+    margin-top:30px;
+    }
+
+    @media only screen and (max-width: 750px) {
+      
+    .heading-one-step7{
+        margin-right: 0px;
+        font-size: 20px;
+    }
+    .step7-progressBar{
+        width: 340px ;
+    }
+    .inner-card{
+        width: 280px;
+        height: 62px;
+    }
+    .icon-card{
+        
+        margin-left: 7px;
+       
+    
+    }
+    .card-row-step7{
+        padding: 25px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+
+    .inner-card{
+        width: 260px;
+        height: 62px;
+    }
+}

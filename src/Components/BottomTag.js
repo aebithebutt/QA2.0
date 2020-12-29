@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Div,Text,Icon,Image,Tag } from "atomize";
+import './BottomTag.css'
 class BottomTag extends Component {
     render() {
         return (
-            <Div className="row ">
+            <Div className="row bottom-tag-row">
             <Tag className="" style={{marginBottom: 22,
                           backgroundColor: "#FFFFFF",height: 89,width: 354, marginLeft: 28,borderRadius: 15, marginTop: 138, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.1)" }}>
 

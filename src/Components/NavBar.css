@@ -1,13 +1,15 @@
 .img_logo{
     margin-top: 20px;
     margin-left: 20px;
-    float: left;
+    
+    width: 262px;
+     height: 52px;
 }
 
 .nav-btn{
     width: 218px;
 height: 60px;
-margin-right: 57px;
+
 margin-top: 20px;
 float: right;
 border: none;
@@ -17,9 +19,101 @@ border-radius: 15px;
 .nav-text{
     font-family: Montserrat;
     font-style: normal;
-margin-top: 10px;
+margin-top: 12px;
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
     
     }
+
+    
+@media only screen and (max-width: 1400px) {
+    .img_logo{
+            width: 152px;
+            height: 45px;
+  float:left!important;
+    height: 30px;
+    }
+        
+    .nav-btn{
+        width: 155px;
+    height: 45px;
+    margin-right:0px;
+    float:right!important;
+    border-radius: 15px;
+    }
+    
+    .nav-text{
+        font-weight: normal;
+        font-size: 13px;
+
+        line-height: 16px;
+        
+        
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .img_logo{
+                width: 152px;
+                height: 45px;
+     
+        height: 30px;
+        }
+            
+        .nav-btn{
+            width: 155px;
+            float:left;
+        height: 45px;
+
+        border-radius: 15px;
+        }
+        
+        .nav-text{
+            font-weight: normal;
+            font-size: 13px;
+         
+            line-height: 16px;
+            
+            
+            }
+        }
+     
+    
+    @media only screen and (max-width: 400px) {
+.img_logo{
+        width: 140px;
+        height: 45px;
+    float: right;
+height: 30px;
+margin-left:0px;
+}
+    
+.nav-btn{
+    width: 100px;
+height: 45px;
+float: left ;
+border-radius: 15px;
+}
+
+.nav-text{
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 16px;
+    
+    
+    }
+}
+@media only screen and (max-width: 300px) {
+    .img_logo{
+        width: 110px;
+}
+
+.nav-btn{
+    width: 90px;
+    height: 40px;
+
+}
+}
+
+

@@ -3,8 +3,14 @@
     justify-content:center;
 display:flex;
 }
+.step6-progressBar{
+    width:750px;
+    background:#E5E5E5;
+    border-radius:10px;
+    margin-top:30px;
+    }
 .cardhandle-step6{
-height:500px;
+/* height:500px; */
 margin-top:35px;
 box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
 border-radius:0.8rem;
@@ -70,4 +76,34 @@ margin-bottom: 10px;
         text-align: center;
       
         }
-      
+  
+        @media only screen and (max-width: 750px) {
+        .responsive-fields-step6{
+            display: flex;
+            justify-content: center;
+        }
+
+        .drop-down-step6
+    {
+        width: 260px !important;
+    
+    }
+    .heading-one-step6{
+        margin-right: 0px;
+        font-size: 20px;
+    }
+    .step6-progressBar{
+        width: 340px ;
+    }
+    .card-row-step6{
+        padding: 25px;
+    }
+    }
+        
+    @media only screen and (max-width: 300px) {
+    
+        .heading-one-step6{
+            margin-right: 0px;
+            font-size: 17px;
+        }
+    }

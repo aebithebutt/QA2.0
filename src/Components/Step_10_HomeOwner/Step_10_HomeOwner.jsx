@@ -3,6 +3,8 @@ import ImagesLine from '../ImagesLine'
 import { Div,Text,Icon} from "atomize";
 import {ProgressBar,Card,Button} from 'react-bootstrap';
 import {Select,Form} from 'antd';
+import axios from 'axios'
+import XMLParser from "react-xml-parser";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Step_10_HomeOwner.css';
 class Step_10_HomeOwner extends Component {
@@ -11,10 +13,85 @@ class Step_10_HomeOwner extends Component {
         this.state = {
         
            dropCheck: 'false',
-       	homeOverChecked: false,
+           homeOverChecked: false,
+           error: "",
+           loading: false,
+           response: "",
 
     };
 
+
+}
+onFinish = (values) => {
+ console.log("on finish")
+    this.setState(
+        {
+          ...this.state,
+          loading: true,
+        },
+        this.PostDataOfBusinessInsurance(this.props.postData)
+      );
+  console.log(this.props.postData)
+}
+onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+};
+PostDataOfBusinessInsurance = (postData) => {
+  console.log("postData");
+
+    console.log(postData);
+    axios.post(
+      'https://quotehound.leadspediatrack.com/post.do',
+      null,
+      {
+        params: this.props.postData,
+      }
+    )
+      .then((res) => {
+        console.log(`res ${res}`);
+        var xml = new XMLParser().parseFromString(res.data);
+        if (xml.children[0].value === "Error") {
+          this.setState({
+            loading: false,
+            response: xml.children[1].value,
+          });
+          console.log(xml.children[1].value);
+        } else if (
+          xml.children[0].value === "Matched" ||
+          xml.children[0].value === "Unmatched"
+        ) {
+          this.props.nextStep();
+          this.props.copyValuesToPostData2();
+        }
+      })
+      .catch((err) => {
+        console.log(`err ${err}`);
+
+        if (err) throw err;
+      });
+  };
+  UNSAFE_componentWillReceiveProps = () => {
+    if (!this.state.response == "") {
+      this.setState({
+        ...this.state,
+        response: "",
+      });
+    }
+  };
+
+
+moveForward=()=>{
+    this.props.nextStep();
+    console.log(this.props.postData)
+    console.log("on move forward")
+    this.setState(
+        {
+          ...this.state,
+          loading: true,
+        },
+        this.PostDataOfBusinessInsurance(this.props.postData)
+      );
+  console.log(this.props.postData)
 
 }
     render() {
@@ -24,14 +101,14 @@ class Step_10_HomeOwner extends Component {
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)",height:"930px"}}>
                    
                     <Div className="row-center-step10">
-                        <ProgressBar now={20} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+                        <ProgressBar now={95} className="step10-progressBar"   />
                               </Div>
 
                               <Div className="row row-center-step10" >
                                 <Text className="heading-one-step10" tag="h1"> What Is the Year of your car?</Text>
                         </Div>
 
-                            <Div className="row row-center-step10" >
+                            <Div className="row row-center-step10 card-row-step10" >
                                 <Card className="cardhandle-step10">
                                      
                                        <Div className="row">
@@ -45,14 +122,16 @@ class Step_10_HomeOwner extends Component {
 						name="basic"
 						initialValues={{
 							remember: true,
-						}}
+                        }}
+                        onFinish={this.onFinish}
+                        onFinishFailed={this.onFinishFailed}
 					
 					>
 						
 						
-								<Div className="p-2 col-md-4">
+								<Div className="p-2 col-md-4 col-sm-12 responsive-fields-step10">
                                 <Select className="drop-down-step10" defaultValue="Are You a Home Owner"  onChange={(checked1) => {
-											this.props.homeOwnershipForPostData2(checked1 ? 1 : 0);
+											this.props.homeOwnershipForPostData2(checked1);
 											this.setState({ homeOverChecked: !this.state.homeOverChecked });
 										}}>
                                         <Option value="Yes">Yes</Option>
@@ -61,14 +140,16 @@ class Step_10_HomeOwner extends Component {
                                         </Select>
 
 									{this.state.homeOverChecked && (
-										<Form.Item style={{width:"312px"}}>
-                                         <Select className="drop-down-step10" defaultValue="Are You Interested in Home Quote"  onChange={
+
+										<Form.Item >
+                                         <Select className="drop-down-step10 " defaultValue="Are You Interested in Home Quote"  onChange={
                                              
                                              (value)=>{
                                                
                         if(value !== 'Are You Interested in Home Quote'){
                             this.setState({
                                 dropCheck : 'true'
+
                             })
                         }else{
 
@@ -98,7 +179,7 @@ class Step_10_HomeOwner extends Component {
              this.state.dropCheck=='true'
              ?
                 <Div className="row row-center-step10" style={{marginTop:"103px"}}>
-                            <Button className="base-btn-step10" disabled={false}  		onClick={this.props.nextStep} >Get My Qoute</Button>
+                            <Button className="base-btn-step10" disabled={false}   onClick={() => this.moveForward()} >Get My Qoute</Button>
 
 
                               </Div>

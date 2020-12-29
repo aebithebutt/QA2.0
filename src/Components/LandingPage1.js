@@ -4,8 +4,14 @@ import background from './rec.png'
 import ImagesLine from './ImagesLine'
 import BottomTag from './BottomTag'
 import MainBody from './MainBody'
-
+import './LandingPage1.css'
+import ImagesLineBlock from './ImagesLineBlock'
 class LandingPage1 extends Component {
+
+    // componentWillUpdate(){
+    //     console.log(`this.props ${this.props.address.value}, ${this.props.city.city_value}, ${this.props.state}, `)
+    // }
+
     render() {
         return (
 
@@ -15,29 +21,38 @@ class LandingPage1 extends Component {
                
                  <Div className="row">
 
-                         <Div className="col-lg-6 col-md-6 col-sm-6" >
+                         <Div className="col-lg-6 col-md-6 col-sm-12" >
                            
                     {/*-------------------- Separate Component for Main Body----------------------- */}
-                            <MainBody nextStep={this.props.nextStep}/>
+                            <MainBody 
+                            //  address={this.props.address} 
+                            //  city={this.props.city}
+                             state={this.props.state}
+                             nextStep={this.props.nextStep} freecar="Free Car Insurance" qoute="Qoute"
+                        
+                             />
+              
                     {/*-------------------- Separate Component for Images----------------------- */}
-                            <ImagesLine/>
+                            <ImagesLine />
                     {/*-------------------- Separate Component for Bottom Tag----------------------- */} 
                             <BottomTag/>
                 
                                    </Div>
 
-                         <Div className="col-lg-6 col-md-6 col-sm-6 " >
+                         <Div className="col-lg-6 col-md-6 col-sm-12 " >
 
 
-                             <Div style={{width:425, height:576,backgroundImage:`url(${background})`, backgroundRepeat:"no-repeat",
-                                 backgroundSize:"cover", marginTop:55,marginLeft:150}}>
+                             <Div className="Right-Image" >
 
-                                        <Image className="" style={{ width: 415, height:617,marginTop:25,marginLeft:80}} 
-                                                        src="assests/RecUpper.png" alt="Image 5"/>
+                                        <Image className="RecUpperImage" src="assests/RecUpper.png" alt="Image 5"/>
 
                                  </Div> 
                             
                              </Div>
+                          
+                             <Div className="col-sm-12 " >
+                                 <ImagesLineBlock/>
+                                </Div>
              
                          </Div>
                 

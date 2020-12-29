@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import {ProgressBar,Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Step_5.css';
+import ImagesLineBlock from '../ImagesLineBlock'
 import axios from 'axios'
 
 class Step_5 extends Component {
@@ -68,21 +69,22 @@ class Step_5 extends Component {
 
 	moveNext = (e) => {
 		this.props.nextStep();
-		this.props.Vehicle_1_Model(e.target.value);
+		this.props.vehicle_model(e.target.value);
+	
 	};
     render() {
         return (
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)"}}>
                    
             <Div className="row-center-step5">
-                <ProgressBar now={42} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+                <ProgressBar now={45} className="step5-progressBar"/>
                       </Div>
 
                       <Div className="row row-center-step5" >
                         <Text className="heading-one-step5" tag="h1"> What Is the Model of your car?</Text>
                 </Div>
 
-                    <Div className="row row-center-step5" >
+                    <Div className="row row-center-step5 card-row-step5" >
                         <Card className="cardhandle-step5">
                              
                                <Div className="row">
@@ -113,6 +115,9 @@ class Step_5 extends Component {
       <ImagesLine/>
 
       </Div>
+	  <Div className="col-sm-12" style={{marginTop:"50px"}} >
+                                               <ImagesLineBlock/>
+                                          </Div>
       </Div>
         );
     }

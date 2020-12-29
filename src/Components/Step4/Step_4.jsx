@@ -7,6 +7,7 @@ import './Step_4.css';
 import axios from 'axios'
 import {Select} from 'antd';
 import ImagesLine from '../ImagesLine'
+import ImagesLineBlock from '../ImagesLineBlock'
 
 const { Option } = Select;
 
@@ -64,7 +65,7 @@ class Step_4 extends Component {
 					<input
 						type="button"
 						className=""
-						style={{ marginTop:"3px",backgroundColor:"transparent" }} 
+						style={{ marginTop:"3px",backgroundColor:"transparent",border:"none" }} 
 						value={this.state.names[i]}
 						onClick={this.moveNext}
 					/>
@@ -76,8 +77,9 @@ class Step_4 extends Component {
 
 	moveNext = (e) => {
 		this.props.nextStep();
-		this.props.Vehicle_1_Make(e.target.value);
+		this.props.vehicle_make(e.target.value);
 		this.props.nameForVehicalModel(e.target.value);
+	console.log(this.props.nameForVehicalModel)
 	};
 
     render() {
@@ -90,14 +92,14 @@ class Step_4 extends Component {
             <Div className="Container"  style={{background: "rgb(229 229 229 / 17%)",height:"930px"}}>
                    
             <Div className="row-center-step4">
-                <ProgressBar now={20} style={{width:"750px",background: "#E5E5E5",borderRadius: "10px",marginTop:"30px"}} />
+                <ProgressBar now={35}  className="step4-progressBar"  />
                       </Div>
 
                       <Div className="row row-center-step4" >
                         <Text className="heading-one-step4" tag="h1"> What Is the Make of your car?</Text>
                 </Div>
 
-                    <Div className="row row-center-step4" >
+                    <Div className="row row-center-step4 card-row-step4" >
                         <Card className="cardhandle-step4">
                              
                                <Div className="row">
@@ -108,25 +110,25 @@ class Step_4 extends Component {
                                       <Text className="mainHeading-step4" tag="h1"> Vehicle Make</Text>
                                  </Div>
                                  
-                 <Div className="row row-center-step4">
-				 <Div className="row">{this.state.names.length !== 0 && this.createVehicleNameBoxes()}</Div>
-						<br />
-						{this.state.names.length !== 0 && (
-							<Select
-							className="drop-down-step4"
-								// style={{ width: "400px" }}
-								size="large"
-								placeholder="Other Makes"
-								optionFilterProp="children"
-								filterOption={(input, option) =>
-									option.children.toLowerCase().indexOf(input.toUpperCase()) >= 0
-								}
-							>
-								{this.createVehicleNameSelect()}
-							</Select>
-						)}
+										<Div className="row row-center-step4">
+										<Div className="row">{this.state.names.length !== 0 && this.createVehicleNameBoxes()}</Div>
+												<br />
+												{this.state.names.length !== 0 && (
+													<Select
+													className="drop-down-step4"
+														// style={{ width: "400px" }}
+														size="large"
+														placeholder="Other Makes"
+														optionFilterProp="children"
+														filterOption={(input, option) =>
+															option.children.toLowerCase().indexOf(input.toUpperCase()) >= 0
+														}
+													>
+														{this.createVehicleNameSelect()}
+													</Select>
+												)}
 
-               </Div>
+									</Div>
          
 		   {/**      <Div className="row row-center-step4" style={{marginTop:"10px"}}>
                             <Button className="base-btn-step4" 	 >  Next </Button>
@@ -144,6 +146,9 @@ class Step_4 extends Component {
       <ImagesLine/>
 
       </Div>
+	  <Div className="col-sm-12" style={{marginTop:"50px"}} >
+                                               <ImagesLineBlock/>
+                                          </Div>
       </Div>
            
         );
