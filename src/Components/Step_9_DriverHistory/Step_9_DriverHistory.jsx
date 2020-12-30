@@ -41,7 +41,7 @@ class Step_9_DriverHistory extends Component {
     move=()=>{
         
         this.props.sr22ForPostData2(this.state.sr22)
-      //  this.props.Driver_1_License_Status(this.state.lisence)
+      //  this.props.active_license(this.state.lisence)
         this.props.tickets_or_claims_in_last_three_years(this.state.noClaims,this.state.lisence)
         this.props.nextStep();
     //     console.log(this.state.sr22)

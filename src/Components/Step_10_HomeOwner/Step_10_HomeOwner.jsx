@@ -51,7 +51,7 @@ PostDataOfBusinessInsurance = (postData) => {
         console.log(`res ${res}`);
         var xml = new XMLParser().parseFromString(res.data);
         if (xml.children[0].value === "Error") {
-          this.setState({
+          this.setState({ 
             loading: false,
             response: xml.children[1].value,
           });

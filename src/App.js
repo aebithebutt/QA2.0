@@ -31,6 +31,7 @@ import React, { Component } from 'react';
   state = {
     postData: {
       // extra entries
+      lp_response :"JSON",
       lp_campaign_id:"5fe0d62882ef8",
       lp_campaign_key:"Gn2J4NDMpk38vxyBbQm7",
       zip_code:"54000",
@@ -40,20 +41,20 @@ import React, { Component } from 'react';
       SRC: "Quantum_Website_Auto",
       Pub_ID: 13,
       Sub_ID: 12,
-      Trusted_Form_URL: "",
+      trusted_form_cert_id: "",
       User_Agent: "",
       Landing_Page: "quantumassurance.com",
       TCPA_Consent: "Yes",
       TCPA_Language:
         "By hitting submit below, I provide my express written consent to the following. Telemarketing calls, text messages, emails, and postal mail from this Web site, our marketing and re-marketing network, and up to eight insurance companies or their affiliates  or representatives at the phone number (including wireless number), email address, and postal address provided by me. Telemarketing calls, text messages, emails, and postal mail (including wireless number), email address, and postal address provided by me. Calls and text messages transmitting insurance quotes, or seeking related additional information from me, using an Automated Telephone Dialing System or prerecorded or artificial voices. Electronic video monitoring and recordation of my activities on this Site; and I acknowledge that I may revoke my consent at any time by Calling 1 888-316-1350 or emailing “STOP” to  optout@quantumassurance.com.  I AGREE TO ALL OF THE ABOVE AND SEND MY QUOTE",
       Format: "JSON",
-      LeadiD_Token: "",
+      jornaya_lead_id: "",
       Vehicle_1_Average_One_Way_Mileage: 0,
       Vehicle_1_Parking: "unknown",
       Vehicle_1_Average_Days_Per_Week_Used: 0,
       Vehicle_1_Desired_Collision_Coverage: "No Coverage",
       Vehicle_1_Desired_Comprehensive_Coverage: "No Coverage",
-      Driver_1_License_Status: "",
+      active_license: "",
       Driver_1_Age_When_First_Licensed: 0,
       Driver_1_Occupation: "Student",
       Driver_1_Current_Residence: "Other",
@@ -292,11 +293,27 @@ import React, { Component } from 'react';
   state={(value, address_value, city_value)=>{
 //console.log(`app.js state ${value} address ${address_value}  city ${city_value}` )
     this.setState({
-      postData:{ ...this.state.postData, state: value, address:address_value, city:city_value}
+      postData:{ ...this.state.postData, state: value, address:address_value, city:city_value , jornaya_lead_id: document.getElementById("jornaya_lead_id").value,
+      trusted_form_cert_id: document.getElementById(
+        "trusted_form_cert_id_0"
+      ).value,}
     })
-     console.log(`this.state.postData.address ${this.state.postData.state}`)
+     //copied code for lead id
+    console.log(`this.state.postData.address ${this.state.postData.state}`)
+     console.log(document.getElementById("jornaya_lead_id").value);
+              console.log(document.getElementsByTagName("script")[0].src);
+              // this.setState({
+              //   postData: {
+              //     ...this.state.postData,
+                 
+              //   },
+              // });
+              console.log(document.getElementById("trusted_form_cert_id_0"));
+            }
+     //copied code for lead id
+
 }
-  }
+  
  
 
 //
@@ -506,12 +523,12 @@ vehicle_ownership={(value) =>
            <Step_9_DriverHistory
       sr22ForPostData2={this.sr22ForPostData2}
      
-      Driver_1_License_Status={(value) =>
+      active_license={(value) =>
     //  console.log(value)
           this.setState({
           postData: {
             ...this.state.postData,
-          Driver_1_License_Status: value,
+          active_license: value,
           },
         })
        }
@@ -533,7 +550,7 @@ vehicle_ownership={(value) =>
       this.setState({
           postData: {
             ...this.state.postData,
-          tickets_or_claims_in_last_three_years: value,  Driver_1_License_Status: license_value,
+          tickets_or_claims_in_last_three_years: value,  active_license: license_value,
           },
         })
       }}
