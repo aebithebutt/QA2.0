@@ -103,7 +103,7 @@ class Step_4 extends Component {
                         <Card className="cardhandle-step4">
                              
                                <Div className="row">
-                                        <Icon name="LeftArrowSolid" color="#488BFF" className="iconback-step4" />
+                                        <Icon onClick={() => this.props.goToStep(3)} name="LeftArrowSolid" color="#488BFF" className="iconback-step4" />
                                 </Div>
 
                                   <Div className="row row-center-step4" style={{marginBottom:"20px"}} >

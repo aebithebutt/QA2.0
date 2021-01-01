@@ -31,7 +31,7 @@ import React, { Component } from 'react';
   state = {
     postData: {
       // extra entries
-      lp_response :"JSON",
+      // lp_response :"JSON",
       lp_campaign_id:"5fe0d62882ef8",
       lp_campaign_key:"Gn2J4NDMpk38vxyBbQm7",
       zip_code:"54000",
@@ -251,14 +251,14 @@ import React, { Component } from 'react';
 
         <NavBar/> 
  
-          {/* <BrowserRouter>
+          <BrowserRouter>
         <Switch>
-           <Route path="/land1" component={LandingPage1} > </Route>
-           <Route path="/land2" component={LandingPage2} > </Route>
-           <Route path="/land3" component={LandingPage3} > </Route>
+           <Route path="/land1" exact component={LandingPage1} > </Route>
+           <Route path="/land2" exact component={LandingPage2} > </Route>
+           <Route path="/land3" exact component={LandingPage3} > </Route>
          </Switch>
         </BrowserRouter>
-        */}
+       
 
    <StepWizard initialStep={1}>
   
@@ -368,8 +368,8 @@ import React, { Component } from 'react';
      console.log(`this.state.postData.address ${this.state.postData.state}`)
 }
   }
-  />  */}
-  
+  /> 
+   */}
    <Step2
  
   first_name={(value) =>

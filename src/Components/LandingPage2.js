@@ -6,6 +6,10 @@ import ImagesLine from './ImagesLine'
 import ImagesLineBlock from './ImagesLineBlock'
 import './LandingPage2.css'
 class LandingPage2 extends Component {
+  componentDidMount(){
+    // console.log(`this.props ${this.props.address.value}, ${this.props.city.city_value}, ${this.props.state}, `)
+    console.log("landing page 2")
+}
     render() {
         return (
             <>

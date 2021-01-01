@@ -45,7 +45,7 @@ class Step_7_Addanother extends Component {
          <Div className="row row-center-step7 card-row-step7" >
             <Card className="cardhandle-step7">
             <Div className="row">
-                                                <Icon name="LeftArrowSolid" color="#488BFF" className="iconback-step7" />
+                                                <Icon  onClick={() => this.props.goToStep(6)} name="LeftArrowSolid" color="#488BFF" className="iconback-step7" />
                                         </Div>
 
            <Div style={{marginTop:"117px"}}>
