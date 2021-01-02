@@ -31,7 +31,7 @@ import React, { Component } from 'react';
   state = {
     postData: {
       // extra entries
-      lp_response :"JSON",
+   //   lp_response :"JSON",
       lp_campaign_id:"5fe0d62882ef8",
       lp_campaign_key:"Gn2J4NDMpk38vxyBbQm7",
       zip_code:"54000",

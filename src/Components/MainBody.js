@@ -15,7 +15,7 @@ class MainBody extends Component {
 
 	state = {
         searched : false,
-		address: '',
+		address: 'Address',
 		city: '',
 		area: '',
 		state: '',
@@ -117,8 +117,9 @@ class MainBody extends Component {
 			withGoogleMap((props) => (
 				<GoogleMap google={this.props.google}>
 			
-					<Autocomplete style={{}} placeholder={this.state.city ? `${this.state.city} ${this.state.area} ${this.state.state}
-					 ${this.state.address}`: 'Address'} 
+					<Autocomplete style={{}} placeholder={
+					// 	this.state.city ? `${this.state.city} ${this.state.area} ${this.state.state}
+					  `${this.state.address}`}
 					className='body_input pg1-text' onPlaceSelected={this.onPlaceSelected} types={['(regions)']} />
 			
 				</GoogleMap>
