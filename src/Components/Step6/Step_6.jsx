@@ -80,7 +80,7 @@ coverage=(e)=>{
                         <Card className="cardhandle-step6">
                              
                                <Div className="row">
-                                        <Icon name="LeftArrowSolid" color="#488BFF" className="iconback-step5" />
+                                        <Icon onClick={() => this.props.goToStep(5)} name="LeftArrowSolid" color="#488BFF" className="iconback-step5" />
                                 </Div>
                      
                  <Div className="row row-center-step6" style={{marginTop:"47.25px"}} >

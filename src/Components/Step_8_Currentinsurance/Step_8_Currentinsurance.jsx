@@ -63,7 +63,7 @@ class Step_8_Currentinsurance extends Component {
                                 <Card className="cardhandle-step8">
                                      
                                        <Div className="row">
-                                                <Icon name="LeftArrowSolid" color="#488BFF" className="iconback-step8" />
+                                                <Icon  onClick={() => this.props.goToStep(7)} name="LeftArrowSolid" color="#488BFF" className="iconback-step8" />
                                         </Div>
                                         
                                        

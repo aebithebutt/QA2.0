@@ -112,7 +112,7 @@ moveForward=()=>{
                                 <Card className="cardhandle-step10">
                                      
                                        <Div className="row">
-                                                <Icon name="LeftArrowSolid" color="#488BFF" className="iconback" />
+                                                <Icon  onClick={() => this.props.goToStep(9)} name="LeftArrowSolid" color="#488BFF" className="iconback" />
                                         </Div>
 
                                           <Div className="row row-center-step10" >

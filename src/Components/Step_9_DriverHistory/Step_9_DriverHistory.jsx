@@ -67,7 +67,7 @@ class Step_9_DriverHistory extends Component {
                                 <Card className="cardhandle-step9">
                                      
                                        <Div className="row">
-                                                <Icon name="LeftArrowSolid" color="#488BFF" className="iconback" />
+                                                <Icon  onClick={() => this.props.goToStep(8)} name="LeftArrowSolid" color="#488BFF" className="iconback" />
                                         </Div>
 
                                         

@@ -11,6 +11,10 @@ class LandingPage3 extends Component {
     move=()=>{
         this.props.nextStep();
   }
+  componentDidMount(){
+    // console.log(`this.props ${this.props.address.value}, ${this.props.city.city_value}, ${this.props.state}, `)
+    console.log("landing page 3")
+}
     render() {
         return (
             <>

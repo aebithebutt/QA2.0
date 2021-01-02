@@ -8,9 +8,10 @@ import './LandingPage1.css'
 import ImagesLineBlock from './ImagesLineBlock'
 class LandingPage1 extends Component {
 
-    // componentWillUpdate(){
-    //     console.log(`this.props ${this.props.address.value}, ${this.props.city.city_value}, ${this.props.state}, `)
-    // }
+    componentDidMount(){
+        // console.log(`this.props ${this.props.address.value}, ${this.props.city.city_value}, ${this.props.state}, `)
+        console.log("landing page 1")
+    }
 
     render() {
         return (

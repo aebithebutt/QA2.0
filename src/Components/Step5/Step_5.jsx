@@ -88,7 +88,7 @@ class Step_5 extends Component {
                         <Card className="cardhandle-step5">
                              
                                <Div className="row">
-                                        <Icon name="LeftArrowSolid" color="#488BFF" className="iconback-step5" />
+                                        <Icon onClick={() => this.props.goToStep(4)} name="LeftArrowSolid" color="#488BFF" className="iconback-step5" />
                                 </Div>
 
                                   <Div className="row row-center-step5" >
