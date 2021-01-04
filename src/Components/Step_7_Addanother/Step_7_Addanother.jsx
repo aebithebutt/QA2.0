@@ -126,10 +126,21 @@ class Step_7_Addanother extends Component {
                     
                     
 </Div>
-                    <Div className="row row-center" >
-                                <Button className="base-btn-step7" 	onClick={(e) => this.moveForward(e)}>Next</Button>
-                          
-                          </Div>
+
+
+
+      <Div className="row row-center" >
+          {
+    this.state.table== '' ?
+
+    
+      <Button className="base-btn-step7" 	onClick={(e) => this.props.goToStep(3)}>Add Again</Button>
+      :
+      <Button className="base-btn-step7" 	onClick={(e) => this.moveForward(e)}>Next</Button>
+          }
+</Div> 
+
+                 
                        
 
                 </Card>

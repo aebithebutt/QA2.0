@@ -85,6 +85,7 @@ coverage=(e)=>{
                      
                  <Div className="row row-center-step6" style={{marginTop:"47.25px"}} >
                    <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">    
+                   <Text className="top-field-text-step6">Primary Use</Text>
                  <Select className="drop-down-step6" defaultValue="Primary use"  size="large" onChange={
                      (value) => {
                     
@@ -140,6 +141,7 @@ coverage=(e)=>{
                                  this.state.dropCheck === 'true'
                                  ? */}    
                                  <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">   
+                                 <Text className="top-field-text-step6">Mileage</Text>
                           <Select className="drop-down-step6" disabled={false} defaultValue="Mileage"  size="large"  onChange={(value) => {
                         console.log(value)
                         if(value !== 'Mileage'){
@@ -246,11 +248,13 @@ coverage=(e)=>{
              </Div>
 
 
-             <Div className="row row-center-step6" style={{marginTop:"20px"}} >
+             <Div className="row row-center-step6" style={{marginTop:"70px"}} >
+          
         {/**      {
             this.state.dropCheck2 === 'true'
                                     ? */}           
         <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">  
+        <Text className="top-field-text-step6">Coverage Wanted</Text>
         <Select className="drop-down-step6" defaultValue="Coverage Wanted" disabled={false}  size="large"  onChange={
         (value)=>{
         if(value!=='Coverave Wanted'){
@@ -369,6 +373,7 @@ coverage=(e)=>{
                                         this.state.dropCheck3 ==='true'
                                         ? */}    
                                 <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step6">  
+                                <Text className="top-field-text-step6">Ownership</Text>
                                 <Select className="drop-down-step6" defaultValue="Ownership" disabled={false}   size="large"  onChange={
                                     (value)=>{
                                         if(value!=='Ownership'){

@@ -20,6 +20,14 @@ padding:15px;
 padding-left: 25px;
 padding-right: 35px;
 }
+.top-field-text-step6{
+    font-family: Roboto;
+ font-size:14px ;
+    font-weight: 550;
+    color:black;
+margin-left:3px;
+margin-bottom: 5px;
+}
 
 .iconback-step6{
         width: 32.5px;
@@ -30,7 +38,7 @@ padding-right: 35px;
 .drop-down-step6
 {
     width: 312px;
-    margin-top: 42px;
+    margin-top: 0px;
 
     }
 .heading-one-step6{

@@ -120,7 +120,7 @@ class MainBody extends Component {
 					<Autocomplete style={{}} placeholder={
 					// 	this.state.city ? `${this.state.city} ${this.state.area} ${this.state.state}
 					  `${this.state.address}`}
-					className='body_input pg1-text' onPlaceSelected={this.onPlaceSelected} types={['(regions)']} />
+					className='body_input pg1-text' onPlaceSelected={this.onPlaceSelected} types={['address']} />
 			
 				</GoogleMap>
 			)),

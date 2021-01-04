@@ -129,7 +129,9 @@ simplePhone = (value) => {
 					>
                    
                     <Div className="row " style={{marginTop:"10px"}}>
+                
                             <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields">
+                            <Text className="top-field-text-step2">First Name</Text>
                             <Form.Item
 							name="firstName"
 							hasFeedback
@@ -141,7 +143,7 @@ simplePhone = (value) => {
 							]}
 						>
 						
-      
+                                     
                                       <Input className="input-field" 
                                     //  defaultValue="First Name" 
                                     name="firstName"
@@ -165,6 +167,7 @@ simplePhone = (value) => {
                                 </Div>
 
                                 <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields">
+                                <Text className="top-field-text-step2">Last Name</Text>
                                 <Form.Item
                                         name="lastName"
                                         hasFeedback
@@ -199,6 +202,7 @@ simplePhone = (value) => {
 
                     <Div className="row" style={{marginTop:"0px"}}>
                             <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields">
+                            <Text className="top-field-text-step2">Phone Number</Text>
                             <Form.Item
 							name="phoneNumber"
 							hasFeedback
@@ -253,6 +257,7 @@ simplePhone = (value) => {
                                 </Div>
 
                                 <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields">
+                                <Text className="top-field-text-step2">Email</Text>
                                 <Form.Item
                                           name="email"
                                           hasFeedback
@@ -290,7 +295,7 @@ simplePhone = (value) => {
                     <Div className="row" style={{marginTop:"0px"}}>
 
                             <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields">
-                                
+                            <Text className="top-field-text-step2">Gender</Text>   
                             <Form.Item
 										name="gender"
 									
@@ -331,6 +336,7 @@ simplePhone = (value) => {
                                 </Div>
 
                                 <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields">
+                                <Text className="top-field-text-step2">Date of Birth</Text>
                                 {/* <Form.Item
 							name=""
 							hasFeedback

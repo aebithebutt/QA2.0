@@ -82,6 +82,7 @@ class Step_9_DriverHistory extends Component {
 
                             <Div className="row row-center-step9" style={{marginTop:"47.25px"}} >
                    <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step9">    
+                   <Text className="top-field-text-step9">Do you have liscence ?</Text>
                  <Select className="drop-down-step9" defaultValue="Do you have liscence"  size="large" onChange={
                      (value) => {
                      //   console.log(value)
@@ -124,6 +125,7 @@ class Step_9_DriverHistory extends Component {
 
               
                                  <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step9">   
+                                 <Text className="top-field-text-step9">Have You Ever Filled for SR-22 ?</Text>
                           <Select className="drop-down-step9" disabled={false} defaultValue="Have You Ever Filled for SR-22"  size="large"  onChange={(value) => {
                      //   console.log(value)
                         if(value !== 'Have You Ever Filled for SR-22'){
@@ -165,9 +167,10 @@ class Step_9_DriverHistory extends Component {
              </Div>
            
            
-             <Div className="row row-center-step9" style={{marginTop:"20px"}} >
+             <Div className="row row-center-step9" style={{marginTop:"70px"}} >
           
         <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step9">  
+        <Text className="top-field-text-step9">Tickets Or Claims less than 3 Years?</Text>
         <Select className="drop-down-step9" defaultValue="Tickets Or Claims <3 Years?" disabled={false}  size="large"  onChange={
         (value)=>{
         if(value!=='Tickets Or Claims <3 Years?'){
@@ -207,6 +210,7 @@ class Step_9_DriverHistory extends Component {
             </Div>
        
                                 <Div className="col-lg-6 col-md-6 col-sm-12 responsive-fields-step9">  
+                                <Text className="top-field-text-step9">Number If Tickets and Claims</Text>
                                 <Select className="drop-down-step9" defaultValue="Number If Tickets and Claims" disabled={false}   size="large"  onChange={
                                     (value)=>{
                                         if(value!=='Number If Tickets and Claims'){

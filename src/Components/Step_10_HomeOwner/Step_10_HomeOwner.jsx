@@ -129,7 +129,8 @@ moveForward=()=>{
 					>
 						
 						
-								<Div className="p-2 col-md-4 col-sm-12 responsive-fields-step10">
+								<Div className="p-2 col-md-12 col-lg-12 col-sm-12 responsive-fields-step10">
+                <Text className="top-field-text-step10">Are You a Home Owner ?</Text>
                                 <Select className="drop-down-step10" defaultValue="Are You a Home Owner"  onChange={(checked1) => {
 											this.props.homeOwnershipForPostData2(checked1);
 											this.setState({ homeOverChecked: !this.state.homeOverChecked });
@@ -142,7 +143,8 @@ moveForward=()=>{
 									{this.state.homeOverChecked && (
 
 										<Form.Item >
-                                         <Select className="drop-down-step10 " defaultValue="Are You Interested in Home Quote"  onChange={
+                         <Text style={{marginTop:"30px"}} className="top-field-text-step10">Are You Interested in Home Quote ?</Text>
+                                         <Select className="drop-down-step10 "  defaultValue="Are You Interested in Home Quote"  onChange={
                                              
                                              (value)=>{
                                                

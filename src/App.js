@@ -48,7 +48,7 @@ import React, { Component } from 'react';
       TCPA_Language:
         "By hitting submit below, I provide my express written consent to the following. Telemarketing calls, text messages, emails, and postal mail from this Web site, our marketing and re-marketing network, and up to eight insurance companies or their affiliates  or representatives at the phone number (including wireless number), email address, and postal address provided by me. Telemarketing calls, text messages, emails, and postal mail (including wireless number), email address, and postal address provided by me. Calls and text messages transmitting insurance quotes, or seeking related additional information from me, using an Automated Telephone Dialing System or prerecorded or artificial voices. Electronic video monitoring and recordation of my activities on this Site; and I acknowledge that I may revoke my consent at any time by Calling 1 888-316-1350 or emailing “STOP” to  optout@quantumassurance.com.  I AGREE TO ALL OF THE ABOVE AND SEND MY QUOTE",
       Format: "JSON",
-      jornaya_lead_id: "",
+      leadid_token: "",
       Vehicle_1_Average_One_Way_Mileage: 0,
       Vehicle_1_Parking: "unknown",
       Vehicle_1_Average_Days_Per_Week_Used: 0,
@@ -293,14 +293,14 @@ import React, { Component } from 'react';
   state={(value, address_value, city_value)=>{
 //console.log(`app.js state ${value} address ${address_value}  city ${city_value}` )
     this.setState({
-      postData:{ ...this.state.postData, state: value, address:address_value, city:city_value , jornaya_lead_id: document.getElementById("jornaya_lead_id").value,
+      postData:{ ...this.state.postData, state: value, address:address_value, city:city_value , leadid_token: document.getElementById("leadid_token").value,
       trusted_form_cert_id: document.getElementById(
         "trusted_form_cert_id_0"
       ).value,}
     })
      //copied code for lead id
     console.log(`this.state.postData.address ${this.state.postData.state}`)
-     console.log(document.getElementById("jornaya_lead_id").value);
+     console.log(document.getElementById("leadid_token").value);
               console.log(document.getElementsByTagName("script")[0].src);
               // this.setState({
               //   postData: {
@@ -455,8 +455,8 @@ postData: { ...this.state.postData, vehicle_year: value },
      <Step_6
 
 name={this.state.name}
-vehicle_primary_use={(value) =>
- // console.log(value)
+vehicle_primary_use={(value) =>{
+  console.log(value)
  this.setState({
  
   postData:{
@@ -474,7 +474,7 @@ vehicle_primary_use={(value) =>
     
   //   },
   // })
-}
+}}
 
 annual_mileage={(value) =>
  // console.log(value)

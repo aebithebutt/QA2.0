@@ -46,7 +46,7 @@ padding-right: 25px;
 .drop-down-step10
 {
     width: 312px !important;
-    margin-top:40px;
+    margin-top:0px;
 
     }
 
@@ -67,7 +67,15 @@ padding-right: 25px;
         text-align: center;
         
         }
-        
+        .top-field-text-step10{
+            font-family: Roboto;
+         font-size:14px ;
+            font-weight: 550;
+            color:black;
+        margin-left:3px;
+        margin-top: 40px;
+        margin-bottom: 5px;
+        }
         
         @media only screen and (max-width: 750px) {
             .responsive-fields-step9{

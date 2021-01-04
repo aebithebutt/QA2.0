@@ -35,7 +35,7 @@ background: #FFFFFF;
 border: 1px solid #E1E4E8;
 box-sizing: border-box;
 border-radius: 8px !important;
-    margin-top: 42px;
+    margin-top: 0px;
 
     font-family: Inter;
 font-style: normal;
@@ -87,10 +87,18 @@ border:0px;
 .drop-down
 {
     width: 312px !important;
-    margin-top: 42px ;
+    margin-top: 0px ;
 
     }
-
+.top-field-text-step2{
+    font-family: Roboto;
+    
+    font-weight: 550;
+    color:black;
+margin-left:3px;
+margin-bottom: 5px;
+font-size: 14px;
+}
 
     
 @media only screen and (max-width: 750px) {
